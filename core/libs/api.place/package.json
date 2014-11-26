@@ -1,0 +1,20 @@
+{
+	"name":"api.place",
+	"version":"0.0.1",
+	"description":"this plugin manages the application places",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"database_manager",
+			"api.account",
+			"events",
+			"notification_manager",
+			"protocol.builder",
+			"api.place.ansamber",
+			"application.registery"
+		],
+		"provides":["api.place"]
+	}
+}

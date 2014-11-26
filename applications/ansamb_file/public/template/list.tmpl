@@ -1,0 +1,25 @@
+<!--
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<td><input type="checkbox" class="item-checkbox"/></td>
+<td class=<%- (downloaded && uploaded) || place_disabled ? "file_icon" : "inprogress" %> title="<%-downloaded && uploaded ? "done" : (!downloaded ? "downloading" : "uploading")%>" ><span style=<%- typeof extension === 'undefined' ? 'display:none' : '' %> ><%- extension %></span></td>
+<td class="filename" data-action="preview"><%-data.name%></td>
+<td><%-owner ? owner_extra.firstname+' '+( owner_extra.lastname[0] ? owner_extra.lastname[0].toUpperCase() : "" ) : 'me'%></td>
+<td><%-updated_date%></td>
+<td><%-data.filesize%></td>

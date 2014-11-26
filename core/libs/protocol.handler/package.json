@@ -1,0 +1,11 @@
+{
+	"name":"protocol_handler",
+	"version":"0.0.1",
+	"description":"this plugin is responsible for handling all message and perform the correct action depending on the protocol",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["communication_layer"],
+		"provides":["protocol.handler"]
+	}
+}

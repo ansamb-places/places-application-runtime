@@ -1,0 +1,17 @@
+{
+	"name":"api.account",
+	"version":"0.0.1",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"protocol.builder",
+			"database_manager",
+			"server",
+			"external_service_manager",
+			"communication_layer",
+			"events"
+		],
+		"provides":["api.account"]
+	}
+}

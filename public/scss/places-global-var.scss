@@ -1,0 +1,109 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+// Colors
+$p-color-orange : #ff6e57 ;
+$p-color-blue : #54CFF5 ;
+$p-color-black : #373737;
+$p-color-red: #D40013;
+$p-color-green: #29E425;
+$primary-color : #364557 ;
+$secondary-color: #748187 ;
+$p-file-hover-color: #f4f4f4;
+$p-file-lightblue-color: #54CFF5;
+$p-color-light-grey: #F2F2F2;
+$p-color-green-grey: #DAE6E2;
+$p-color-dark-grey: #90A5AF;
+$p-color-light-red: #ff5c64;
+
+// Colors v2
+$p-color-grey : #edebeb;
+$p-color-dark-grey: #B5AC98;
+$p-color-background-light:#F5F2E9;
+$p-color-background-middle:#C2BAA7;
+$p-color-background-middle-dark:#856954;
+$p-color-background-medium-dark:#3F3F3F;
+$p-color-background-dark:#1D1D1B;
+$p-color-online-green:#94DB2C;
+$p-color-alert:#D12C50;
+$p-color-content:#7070B1;
+$p-color-contact:#FF7A45;
+$p-color-place:#24C690;
+$p-color-file-extension:#7270B0;
+$p-color-alert-strong:#E14756;
+$p-color-content-strong:#7067cb;
+$p-color-contact-strong:#f07030;
+$p-color-place-strong:#3FA684;
+$p-color-places-blue:#25C2FB;
+$p-color-places-blue-strong:#177AA0;
+
+// Buttons
+$p-btn-primary-color : #4DC1F3 ; //$p-color-blue ;
+$p-btn-secondary-color: $p-color-grey ;
+
+
+$button-tny: rem-calc(14) !default;
+$button-sml: rem-calc(18) !default;
+$button-med: rem-calc(20) !default;
+$button-lrg: rem-calc(22) !default;
+
+$button-font-tny: rem-calc(14) !default;
+$button-font-sml: rem-calc(16) !default;
+$button-font-med: rem-calc(16) !default;
+$button-font-lrg: rem-calc(22) !default;
+
+$button-font-family: "opensans" !default;
+
+
+$button-font-weight: bold !default;
+$button-font-align: center !default;
+
+$button-function-factor: -10% !default;
+
+
+
+// FONTS
+$p-font-title-size : rem-calc(24px) !important ;
+$p-font-title-weight : bold ;
+
+$p-font-bigger-size : 14pt;
+$p-font-normal-size : 12pt;
+$p-font-small-size : 10pt;
+$p-font-medium-size : rem-calc(13px) ;
+$p-font-tiny-size : rem-calc(11px) ;
+
+$p-font-color : $p-color-background-dark;
+
+$p-font-family-menu : "opensans" !important ;
+
+$p-top-bar-height : 57px ;
+
+$p-top-bar-background-color : white ;
+// $p-top-bar-background-color : #7C8488 ;
+// $p-top-bar-background-color : rgb(33, 36, 43);
+
+// $p-top-bar-icon-color : #404040 ;
+$p-top-bar-icon-color : #54CFF5 ;
+$p-top-bar-right-header-background-color :  #f5f5f5 ; 
+
+$p-tool-bar-background-color : #f3f3f3 ;
+// $p-tool-bar-background-color : #c0c0c0 ;
+$p-tool-bar-color : #000 ;
+$p-tool-bar-height : 57px ;

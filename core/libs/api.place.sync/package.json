@@ -1,0 +1,16 @@
+{
+	"name":"api.place.sync",
+	"version":"0.0.1",
+	"description":"this plugin provide api to manage places sync capabilities",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"api.place",
+			"protocol.builder",
+			"server_link_management"
+		],
+		"provides":["api.place.sync"]
+	}
+}

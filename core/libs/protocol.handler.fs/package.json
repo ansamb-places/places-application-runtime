@@ -1,0 +1,14 @@
+{
+	"name":"protocol.handler.fs",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the fs protocol",
+	"plugin":{
+		"consumes":[
+			"protocol.handler",
+			"api.place.content"
+		],
+		"provides":[]
+	}
+}

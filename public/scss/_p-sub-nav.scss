@@ -1,0 +1,29 @@
+$primary-color : #364557 ;
+$sub-nav-bg-color : #f3f3f3;
+
+// We use these to control margin and padding
+$sub-nav-list-margin: rem-calc(-4 0 18) !default;
+$sub-nav-list-padding-top: rem-calc(4) !default;
+
+// We use this to control the definition
+$sub-nav-font-family: "opensans" !default;
+$sub-nav-font-size: 10pt !default;
+$sub-nav-font-color: #999 !default;
+$sub-nav-font-weight: normal !default;
+$sub-nav-text-decoration: none !default;
+$sub-nav-padding: rem-calc(3 6) !default;
+$sub-nav-border-radius: 0px !default;
+$sub-nav-font-color-hover: scale-color($sub-nav-bg-color, $lightness: -25%) !default;
+
+
+// We use these to control the active item styles
+
+$sub-nav-active-font-weight: bold !default;
+$sub-nav-active-bg: $sub-nav-bg-color !default;
+$sub-nav-active-bg-hover: scale-color($sub-nav-active-bg, $lightness: -4%) !default;
+$sub-nav-active-color: #fff !default;
+$sub-nav-active-padding: $sub-nav-padding !default;
+$sub-nav-active-cursor: default !default;
+
+$sub-nav-item-divider: "" !default;
+$sub-nav-item-divider-margin: rem-calc(12) !default;

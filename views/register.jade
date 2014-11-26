@@ -1,0 +1,56 @@
+// 
+// // Places, Copyright 2014 Ansamb.
+// 
+// This file is part of Places By Ansamb.
+// 
+// Places By Ansamb is free software: you can redistribute it and/or modify it
+// under the terms of the Affero GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// Places By Ansamb is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+// or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+// License for more details.
+// 
+// You should have received a copy of the Affero GNU General Public License
+// along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+extends templates/empty_layout
+block title
+	|Places Register
+block place-content
+
+
+	div.p-single-content-container.p-form-main
+		//- Steping 
+		div.row
+			div.medium-8.medium-offset-2
+				h2.p-form-step
+					!= t('reg.form.step')+" 2 <small>"+t('reg.form.out_of')+" 5</small>"
+				div.p-form-title= t('reg.form.create_your_account')
+				p= t('reg.form.create_your_account_desc')
+
+
+		form#register-form.register(method='post')
+			input(type='text',pattern="^(?=\\S).{0,}",name='firstname',placeholder=t('reg.form.firstname_placeholder') title='can\'t start with blank space',value=firstname,required)
+			input(type='text',pattern="^(?=\\S).{0,}",name='lastname',placeholder=t('reg.form.lastname_placeholder'),title='can\'t start with blank space',value=lastname,required)
+			input(type="email",name='email',placeholder=t('reg.form.email_placeholder') title='should be a valid email address',value=email,required)
+			input#password(type='password',pattern=".{8,}",name='password',placeholder=t('reg.form.password_placeholder'),title=t('reg.form.password_title'),required)
+			input(type='password',pattern="",name='password-confirm',placeholder=t('reg.form.password-confirm_placeholder'),title=t('reg.form.password-confirm_title'),required)
+			div.row.collapse
+				div.medium-3.columns.medium-offset-5
+					input(class='p-button-round p-background-place p-button-padding',type="submit",value=t('reg.form.button_submit_create'))
+				div.medium-4.columns
+					a#tos-href(href="#", style="margin-top : 10px ;", data-reveal-id="tos")= t('reg.form.tos')
+					div#tos.reveal-modal(data-reveal)
+						include tos
+						a.close-reveal-modal &#215;
+			div.pageload-overlay(style='visibility:visible;')
+		
+	script(type="text/javascript").
+		window.requireNode = window.require;
+		window.require = undefined;
+
+	script(type="text/javascript",src="/js/application_init/require-config.js")
+	script(type="text/javascript",src="/js/vendor/require.js",data-main="/js/application_init/register.js")

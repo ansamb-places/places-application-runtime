@@ -1,0 +1,11 @@
+{
+	"name":"events",
+	"version":"0.0.1",
+	"description":"this plugin make components able to emit specific events",
+	"private":true,
+	"main":"index",
+	"plugin":{
+		"consumes":[],
+		"provides":["events"]
+	}
+}

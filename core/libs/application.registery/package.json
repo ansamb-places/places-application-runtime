@@ -1,0 +1,13 @@
+{
+	"name":"application.registery",
+	"description":"this plugin is responsible for register applications (initialization",
+	"version":"0.0.1",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server"
+		],
+		"provides":["application.registery"]
+	}
+}

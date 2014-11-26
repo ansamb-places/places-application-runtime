@@ -1,0 +1,212 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+#p-top-bar-icon-container {
+	li {
+		// float : right ;
+		display : inline-block;
+		padding-left : 12px ;
+		vertical-align : middle ;
+		&.p-profile-name{
+			width:100%;
+		}
+	}
+	white-space: nowrap;
+	max-width: 100%;
+	padding-right: 74px;
+	//overflow: hidden;
+	&>ul{
+		&>li {
+			display : inline !important;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+#p-profile-name{
+	display: inline-block;
+    color:$p-color-background-middle;
+    font-size: 14px;
+    font-weight: normal;
+	margin-left:15px;
+	text-transform:capitalize;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	width: calc(100% - 140px);
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 5px;
+
+	&:hover { 
+		color:$p-color-background-dark;
+		background: $p-color-background-light;
+	}
+}
+
+.p-top-bar-icon {
+// 	// color : #fff ;
+	position: relative;
+	color : $p-color-background-middle ;
+	font-size:30px;
+	padding-left :14px ;
+// 	background-color : $p-top-bar-background-color ;
+	a {
+		color : $p-color-background-middle ;
+		background-color : $p-top-bar-background-color ;
+
+	}
+}
+
+.fi-list:hover{
+	color:$p-color-background-middle-dark !important;
+}
+
+.fi-mail:hover{
+	color:$p-color-background-middle-dark !important;
+}
+
+#p-top-bar-journal{
+	font-weight:bold;
+	font-size:$p-font-small-size ;
+	color:black;
+
+	&:hover{
+		border: 0px;
+		border-bottom: solid 3px black;
+		// -webkit-border-image:  -webkit-gradient(linear, left top, right top, color-stop(0%,#00cea0), color-stop(24%,#00cea0), color-stop(25%,#ff7a45), color-stop(50%,#ff7a45), color-stop(51%,#7572d0), color-stop(75%,#7572d0), color-stop(76%,#dc5014), color-stop(100%,#dc5014));
+	}
+}
+
+.p-top-bar-text-icon {
+	color : $p-color-background-dark ;
+	font-size : rem-calc(14px) ;
+	font-weight : bold ;
+}
+
+.p-top-bar-search-button{
+	position:absolute;
+	display:block;
+	width:10px;
+	height:10px;
+	background-color: red;
+	right:5px;
+	top:2px;
+}
+
+
+.left-header {
+	background-color : $p-top-bar-background-color ;
+	// height : 100% ;
+	// min-height : $p-top-bar-height; 
+
+}
+
+.central-header {
+	@extends .left-header ;
+
+	// #p-search-form {
+	// 	display:inline-block;
+	// 	width : 90% ;
+	// }
+
+	// input {
+	// 	border-radius : 0px ;
+	// }
+}
+
+.right-header {
+	@extends .left-header ; 
+	// background-color : $p-top-bar-right-header-background-color ;
+	// min-height : $p-top-bar-height; 
+}
+
+.tt-cursor{
+	background-color: #ccc;
+}
+
+.tt-hint{
+	top: 7px !important;
+}
+
+.twitter-typeahead{
+	width: 100% !important;
+}
+
+#account-container{
+	position:absolute;
+	z-index:150;
+	top: 50px;
+	right:-800px;
+	width:130px;
+	background:white;
+	padding-top: 5px;
+	box-shadow: 0px 1px 6px rgba(black, 0.5);
+	&:before{
+		content: "";
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 8px 8px 8px;
+		border-color: transparent transparent white transparent;
+		position: absolute;
+		display: inline;
+		margin-left: 10px;
+		top: -8px;
+		right: 40px;
+	}
+}
+
+.p-account-menuItem{
+	display:block;
+	text-align: left;
+	font-size:14px;
+	padding-top: 5px;
+	padding-left: 10px;
+	height:30px;
+	color: $p-color-background-dark;
+	&:hover{
+		background-color: $p-color-background-medium-dark;
+		color:white;
+	}
+}
+
+
+
+//- /!\---------------
+//-
+//- Potentially unused
+//-
+//- ---------------/-\
+
+.header{
+	.button.tiny{
+		margin:0;
+		padding-left:1rem;
+		padding-right:1rem;
+		padding-top: 0;
+		padding-bottom: 0;
+		line-height: 32px;
+		}
+	.button.selected{
+			background:#cf4e36;
+	}
+	h3{
+		color:white;
+	}
+}

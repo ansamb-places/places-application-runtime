@@ -1,0 +1,22 @@
+{
+	"name":"api.contact",
+	"version":"0.0.1",
+	"description":"this plugin manages the application's contacts (people)",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"database_manager",
+			"server",
+			"events",
+			"protocol.builder",
+			"api.account",
+			"api.place",
+			"api.place.ansamber",
+			"avatar_manager",
+			"notification_manager",
+			"external_service_manager"
+		],
+		"provides":["api.contact"]
+	}
+}

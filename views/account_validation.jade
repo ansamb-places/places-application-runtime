@@ -1,0 +1,57 @@
+// 
+// // Places, Copyright 2014 Ansamb.
+// 
+// This file is part of Places By Ansamb.
+// 
+// Places By Ansamb is free software: you can redistribute it and/or modify it
+// under the terms of the Affero GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// Places By Ansamb is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+// or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+// License for more details.
+// 
+// You should have received a copy of the Affero GNU General Public License
+// along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+extends templates/empty_layout
+block title
+	|Places Validation
+block place-content
+	div.p-single-content-container.p-form-main
+		// Steping 
+		div.row
+			div.medium-6.medium-offset-3
+				h2.p-form-step
+					!= t('reg.form.step')+" 3 <small>"+t('reg.form.out_of')+" 5</small>"
+				div.p-form-title= t('reg.valid.check_your_email') 
+
+		p!= t('reg.valid.desc1')
+			br
+			!= t('reg.valid.desc2')
+			br
+			span.p-color-contact= email
+		p!= t('reg.valid.desc3')
+		
+		div.row.collapse.actions
+			//- div.medium-6.columns.medium-centered
+			//- 	//-a(href='/reset/',data-confirm='Do you really want to create a new account?' class='p-button-round p-background-grey p-button-padding') new account
+				
+			//- p.medium-10.columns.medium-offset-1(style="font-size: 0.8em; text-align: justify;")!= t('reg.valid.desc4') 
+			p.medium-8.columns.medium-centered(style="font-size: 0.8em; text-align: center;")!= t('reg.valid.desc4') 
+				!= t('reg.valid.desc5')
+				//-input(class='p-button-round p-background-place p-button-padding', type="button",value="Resend the email",onclick='$("form").show();$(this).hide()')
+		form(action='/resend_code/',style="display:none").resend_code_form
+			input#password(type='password',name=t('reg.form.password'),placeholder=t('reg.form.password'),required)
+			div.medium-4.medium-offset-4.columns
+				input#resend_code(type="submit",value=t('reg.valid.button_submit_resend') class='p-button-round p-background-place p-button-padding')
+			div.medium-4.columns
+				img#sending(src="/images/inprogress.gif" style="display:none")
+	script(type="text/javascript").
+		window.step='account_validation'
+		window.requireNode = window.require;
+		window.require = undefined;
+	script(type="text/javascript",src="/js/application_init/require-config.js")
+	script(type="text/javascript",src="/js/vendor/require.js",data-main="/js/application_init/validation.js")

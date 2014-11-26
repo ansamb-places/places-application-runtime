@@ -1,0 +1,7 @@
+{
+	"kernel_conf":{
+		"host":"127.0.0.1",
+		"uri":"/connection/gui/"
+	},
+	"ng_alias":"no-reply+ng20141017@ansamb.com"
+}

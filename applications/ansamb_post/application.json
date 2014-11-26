@@ -1,0 +1,10 @@
+{
+	"name":"ansamb_post",
+	"contentType":"post",
+	"js":false,
+	"models_dir":"models",
+	"models_version":"0.0.1",
+	"migration_dir":"migrations",
+	"author":"rudylacrete",
+	"icon":"fi-page-edit"
+}

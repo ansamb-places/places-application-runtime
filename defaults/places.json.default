@@ -1,0 +1,5 @@
+{
+	"db_dir":"db",
+	"kernel_uri":"ws://localhost:1985/connection/gui/",
+	"http_port":"8080"
+}

@@ -1,0 +1,15 @@
+{
+	"name":"api.place.message",
+	"version":"0.0.1",
+	"description":"this plugin provide api to send volatile messages in the context of a place",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"api.place",
+			"protocol.builder"
+		],
+		"provides":["api.place.message"]
+	}
+}

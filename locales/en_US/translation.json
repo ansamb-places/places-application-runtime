@@ -1,0 +1,39 @@
+{
+    "reg": {
+    	"form": {
+	        "step": "Step",
+			"out_of": "out of",
+			"create_your_account": "Create your account",
+			"create_your_account_desc": "You have to fill in your account information below and then press the Create button.",
+			"firstname_placeholder": "firstname",
+			"firstname_title": "can't start with blank space",
+			"lastname_placeholder": "lastname",
+			"lastname_title": "can't start with blank space",
+	    	"email_placeholder": "a valid email to receive important information regarding your account",
+	    	"email_title": "should be a valid email address",
+	    	"password": "password",
+	    	"password_placeholder": "this password will be used to access your online account",
+	    	"password_title": "must be 8 characters long or more",
+	    	"password-confirm_placeholder": "confirm your password",
+	    	"password-confirm_title": "confirm your password",
+	    	"button_submit_create": "Create",
+	    	"tos": "terms of services"
+    	},
+    	"valid": {
+			"check_your_email": "Check your email box",
+    		"desc1": "You now need to validate your account",
+    		"desc2": "An email has been sent to",
+    		"desc3": "Please check your email box and follow the instructions",
+    		"desc4": "<strong>Note: </strong>you might receive the validation email in your <em>spam folder</em>, don't forget to check it.",
+    		"desc5": "If you haven't received the validation email within the next 15 minutes, click <a href='#' onclick='$(\"form\").show();$(this).parent().hide()'>this link</a>.",
+    		"button_submit_resend": "Resend"
+    	},
+    	"login": {
+    		"log_in": "Log in",
+    		"email_placeholder": "Your email address",
+    		"email_title": "should be a valid email address",
+    		"password_placeholder": "Your password",
+    		"button_submit_login": "Log in"
+    	}
+    }
+}

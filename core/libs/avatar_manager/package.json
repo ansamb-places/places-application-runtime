@@ -1,0 +1,11 @@
+{
+	"name":"avatar_manager",
+	"version":"0.0.1",
+	"description":"this plugin will save and serve contacts avatar files",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["server","events"],
+		"provides":["avatar_manager"]
+	}
+}

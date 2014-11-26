@@ -1,0 +1,8 @@
+{
+	"place_holder":{
+		"uid":"Your uid: __uid__",
+		"firstname":"Your firstname: __firstname__",
+		"lastname":"Your lastname: __lastname__",
+		"email":"Your email: __email__"
+	}
+}

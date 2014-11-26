@@ -1,0 +1,35 @@
+<!--
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<td>
+	<% for(i=0;i<ansambers.length;i++){%>
+		<span class="ansamber-name"><%-ansambers[i].firstname+" "+(ansambers[i].lastname[0] ? ansambers[i].lastname[0].toUpperCase() : ansambers[i].lastname) %></span>
+	<%}%>
+</td>
+	<% if(last_content){ %>
+		<td class="message">
+			<% if(last_content.data.type=="file"){ %>
+					<span class="label">file</span>
+				<% } %>
+			<%- last_content.data.text%>
+		</td>
+	<% }else{ %>
+		<td class="message"> No message </td>
+	<% } %>
+<td class="timeago"></td>

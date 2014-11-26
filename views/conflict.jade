@@ -1,0 +1,46 @@
+// 
+// // Places, Copyright 2014 Ansamb.
+// 
+// This file is part of Places By Ansamb.
+// 
+// Places By Ansamb is free software: you can redistribute it and/or modify it
+// under the terms of the Affero GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// Places By Ansamb is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+// or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+// License for more details.
+// 
+// You should have received a copy of the Affero GNU General Public License
+// along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+extends templates/empty_layout
+block title
+	|Something
+block place-content
+
+	div.p-single-content-container.p-form-main
+		div.submit-loading
+			span.p-loading.p-color-place.p-big(data-icon="l")
+			
+		div.p-form-title Conflict
+
+		form.register(method='post')
+			p.
+				A conflict has been detecting for this account. An email has been sent to you.
+				Please check it and follow the given instructions.
+			p.
+				You can therefore cancel this registration attempt or retry it once the conflict has been resolved.
+			div.row.collapse
+				div.medium-2.columns
+					input(class='p-button-round p-background-grey',type="submit",value="discard",name="decision").right.p-button.tiny
+				div.medium-2.columns
+					input(class='p-button-round p-background-place',type="submit",value="retry",name="decision").right.p-button.tiny
+	script(type="text/javascript").
+		window.requireNode = window.require;
+		window.require = undefined;
+
+	script(type="text/javascript",src="/js/application_init/require-config.js")
+	script(type="text/javascript",src="/js/vendor/require.js",data-main="/js/application_init/register.js")

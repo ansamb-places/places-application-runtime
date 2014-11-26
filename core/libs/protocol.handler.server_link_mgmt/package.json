@@ -1,0 +1,11 @@
+{
+	"name":"protocol.handler.server_link_mgnt",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin manage the server link protocol",
+	"plugin":{
+		"consumes":["protocol.handler","server_link_management"],
+		"provides":[]
+	}
+}

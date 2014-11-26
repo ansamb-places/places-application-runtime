@@ -1,0 +1,131 @@
+// 
+// // Places, Copyright 2014 Ansamb.
+// 
+// This file is part of Places By Ansamb.
+// 
+// Places By Ansamb is free software: you can redistribute it and/or modify it
+// under the terms of the Affero GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// Places By Ansamb is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+// or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+// License for more details.
+// 
+// You should have received a copy of the Affero GNU General Public License
+// along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+doctype html
+html
+    head
+        meta(name="viewport",content="width=device-width, initial-scale=1.0")
+        title Places
+        link(rel="stylesheet",type="text/css",href="/css/normalize.css")
+        link(rel="stylesheet",type="text/css",href="/css/animate.css")
+        link(rel="stylesheet",type="text/css",href="/css/animation_spinners.css")
+        link(rel="stylesheet",type="text/css",href="/css/magic_animation.css")
+        link(rel="stylesheet",type="text/css",href="/css/main.css")
+        link(rel="stylesheet",type="text/css",href="/css/entypo.css")
+        //- link(rel="stylesheet",type="text/css",href="/css/foundation.min.css")
+        link(rel="stylesheet",type="text/css",href="/css/foundation-icons.css")
+        link(rel="stylesheet",type="text/css",href="/css/jquery-ui.min.css")
+        link(rel="stylesheet",type="text/css",href="/css/app.css")
+        link(rel="stylesheet",type="text/css",href="/css/conversation.css")
+        link(rel="stylesheet",type="text/css",href="/css/tipTip.css")
+        link(rel="stylesheet",type="text/css",href="/css/mediaElementPlayer/mediaelementplayer.min.css")
+        link(rel="stylesheet",type="text/css",href="/css/page-loader/component.css")
+        //- script(src="/js/vendor/modernizr.js").
+        script(type="text/javascript",src="/js/vendor/macbuiltin_menu.js")
+        script(type="text/javascript").
+            window.rootUrl = 'http://#{host}'
+
+        script(src="/js/vendor/page-loader/snap.svg-min.js")
+    body
+        div.fixed
+            div#p-top-bar
+                nav.top-bar.p-top-bar(style="text-align : left; ")
+                    div.row
+                        div.medium-4.columns.left-header
+                            a(href="#place/")
+                                img.p-places-logo(src="/images/places-beta.png", style="height : 50px ; padding-bottom : 5px ;")
+                        div.medium-4.columns.middle-header
+                            ul#p-search-form
+                                li.has-form
+                                    div.row.collapse
+                                        div.small-12.columns
+                                            input#p-search-input(type="text",placeholder="Find")
+
+                        div.medium-4.columns.right-header
+                            div.medium-12.columns
+                                ul#p-top-bar-icon-container.right
+                                    li
+                                        a(href="#place/" id="p-top-bar-journal") home
+                                    li.has-dropdown
+                                        span.p-top-bar-icon
+                                            a(href="#", data-dropdown="notifications-container", data-options="align:custom;correct_left:200;")
+                                                span.fi-list
+                                            span.message-notification.p-notification-color-place
+                                        div#notifications-container.f-dropdown.content.large(data-dropdown-content)
+                                            div.notification-dropdown-header
+                                                    div.p-button-round.p-background-grey.read_all Mark all as read
+                                                ul#notifications
+
+                                        li
+                                            span.p-top-bar-icon
+                                                a(href="#",data-dropdown="messages-container",data-options="align:custom;correct_left:230;")
+                                                    span.fi-mail
+                                                        span.message-notification.p-notification-color-contact
+                                            div#messages-container.f-dropdown.small(data-dropdown-content)
+                                                div.notification-dropdown-header
+                                                    |Messages
+                                                    a(href='#conversation/history' class='p-button-round p-background-grey right more') history
+                                                ul#messages
+
+                                        li.p-profile-name
+                                            a#p-profile-name.p-account
+                                            #account-container.p-account
+                                                a(href='#account/profile' class='p-account-menuItem') account
+                                                a(href='#contact/manage' class='p-account-menuItem') contacts
+                                                a(href='#conversation/history' class='p-account-menuItem') messages
+                            div.medium-1.columns
+
+        div.row#p-main-content.background-sky
+            div.columns.left-menu#placesMenu
+            //- div.medium-1.columns &nbsp;
+            div.columns#p-main-column
+                //- div.medium-8.columns.p-tool-bar-main
+                div#p-place-title  
+                div#activityFeed.droppable.ui-droppable
+                //- div#activityFeed
+            //- div.medium-1.columns
+            div.columns.right-menu
+                div#contactsRequests
+                div#placesContacts
+
+        div#chatArea
+            div.p-stack-div
+                span.fi-comments.p-stack-icon(data-options="align:custom_top; correct_left:180;" data-dropdown="chatStack-dropdown")
+                span.stackTag
+            div#chatStack-dropdown.f-dropdown.tiny(data-dropdown-content)
+                div#stackedChatBoxes
+             div#chatBoxes
+
+
+        div.reveal-modal.medium.p-single-content-container(data-reveal)#popupRegion
+        div#dialogRegion
+        div#conferenceRegion
+
+        div#loader.show.pageload-overlay(data-opening="M 40,-65 145,80 -65,80 40,-65",data-closing="m 40,-65 0,0 L -65,80 40,-65")
+            svg(xmlns="http://www.w3.org/2000/svg",width="100%",height="100%",viewBox="0 0 80 60",preserveAspectRatio="none")
+                path(d="M 40,-65 145,80 -65,80 40,-65")
+        //- Popup save as dialog
+        input.download_hidden_input(type="file")
+        script(src="/js/vendor/page-loader/classie.js")
+        script(src="/js/vendor/page-loader/svgLoader.js")
+        script(type="text/javascript").
+            window.requireNode = window.require;
+            window.require = undefined;
+        script(type="text/javascript",src="/js/require-deps.js")
+        script(type="text/javascript",src="/js/vendor/require.js",data-main="/js/core/boot.js")
+

@@ -1,0 +1,164 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+// Chat message sender's name
+.p-chat-sender {
+	font-size : $p-font-normal-size;
+}
+
+// Conversation Box
+
+.conversation-box {
+	border: 1px solid #d0dbdd;
+	border-top: none;
+	background-color: #fff;
+	// min-width: 330px;
+	// max-width: 330px;
+	min-width: 370px;
+	max-width: 370px;
+	position: absolute;
+	bottom: 0;
+	right: 280px;
+	transition: 0.5s ease !important;
+	-webkit-transition: 0.5s ease !important;
+	.header {
+		background-color: #ff8565;
+		height: 50px;
+		color: #fff;
+		padding: 12px 0 0 15px;
+		-moz-box-shadow: 0px 2px 2px #d9d9d9;
+		-webkit-box-shadow: 0px 2px 2px #d9d9d9;
+		box-shadow-bottom: 4px #d9d9d9;
+		.name {
+			color: white;
+			display: inline-block;
+			width: 210px;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.right {
+			float: right !important;
+			padding-right: 10px;
+		}
+	}
+
+	.conversation {
+		padding: 15px 30px 15px 10px;
+		height: 280px;
+		overflow-x:hidden;
+		overflow-y:auto;
+		.contact {
+			background-color: #fbf8f5;
+			border-radius: 5px;
+			padding: 5px 5px 5px 5px;
+			margin-bottom: 20px;
+
+			p {
+				font-size: 14px;
+				padding: 5px 5px 5px 5px;
+			}
+		}
+
+		.user {
+			background-color: #f26c4f;
+			border-radius: 5px;
+			color: #fff;
+			margin-bottom: 20px;
+
+			p {
+				font-size: 14px;
+				padding: 5px 5px 5px 5px;
+			}
+		}
+		.info {
+			padding: 15px;
+			font-weight: bold;
+			.entypo {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.reply {
+		input[type="text"] {
+			border: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		border-top: 1px solid #d0dbdd;
+		padding-left: 20px;
+		padding-top: 20px;
+
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+.online-left {
+	&:before {
+		@extend .onoffline-tmpl ; 
+		background: url('/images/offline.png') no-repeat;	
+	}		
+}
+.offline-left {
+	&:before {
+		@extend .onoffline-tmpl ; 
+		background: url('/images/offline.png') no-repeat;		
+
+	}		
+}
+
+.onoffline-tmpl {
+	display: block;
+	content: "";
+	width: 12px;
+	height: 12px;
+	text-align : left ;
+	float : left ;
+	margin-top : 8px ;
+	margin-right : 5px ;
+}
+//- /!\---------------
+//-
+//- Potentially unused
+//-
+//- ---------------/-\
+
+.conversations-container{
+	.row{
+		margin-bottom: 10px;
+		.last_content{
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	span{
+			vertical-align: middle;
+			line-height: 42px;
+			white-space: nowrap;
+		}
+	
+	.row:hover{
+		background-color: #e0e7e9;
+	}
+}

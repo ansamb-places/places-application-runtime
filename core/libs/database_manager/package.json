@@ -1,0 +1,11 @@
+{
+	"name":"database_manager",
+	"version":"0.0.1",
+	"description":"this plugin manages all sqlite databases thanks to Sequelize ORM",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["application.registery","server"],
+		"provides":["database_manager"]
+	}
+}

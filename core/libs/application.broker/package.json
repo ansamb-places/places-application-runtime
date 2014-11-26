@@ -1,0 +1,19 @@
+{
+	"name":"application.broker",
+	"description":"this plugin is responsible for loading applications and dispatch message to them",
+	"version":"0.0.1",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"database_manager",
+			"api.place",
+			"client_websocket",
+			"communication_layer",
+			"content_manager",
+			"application.registery"
+		],
+		"provides":["application.broker"]
+	}
+}

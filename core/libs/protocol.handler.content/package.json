@@ -1,0 +1,16 @@
+{
+	"name":"protocol.handler.content",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the content protocol",
+	"plugin":{
+		"consumes":[
+			"protocol.handler",
+			"document.network.broker",
+			"api.place.content",
+			"events"
+		],
+		"provides":[]
+	}
+}

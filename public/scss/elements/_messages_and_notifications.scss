@@ -1,0 +1,274 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+#notifications-container {
+	// overflow-y: auto;
+	padding : 0px ; 
+	margin : 0px ;
+	input {
+		margin : 0px ;
+		border : 0px ;
+		border-bottom : 1px solid $secondary-color ;
+		width : 100% ;
+		outline : none ;
+
+	}
+
+	box-shadow: 0px 0px 8px rgba(black, 0.5);
+
+	width : 300px !important ;
+
+	font-family : 'Arial' ;
+
+	#notifications {
+		width: 100% ;
+		max-height: 250px;
+		overflow-y: auto;
+		padding : 0px ;
+		margin : 0px ;
+		white-space:normal;
+		// width : 500px !important ;
+
+		.uid { color : $p-color-contact ;}
+		.notif { color : $primary-color ;}
+		.timeago { color :$p-color-dark-grey ; font-size : $p-font-tiny-size ; }
+		li {
+			padding : 0px ; 
+			margin : 0px ;
+			border-bottom : 2px solid $p-color-grey ;
+			width : 100% ;
+			&.unread{
+				border-left: 4px solid $p-color-orange;
+			}
+		}
+
+		li:last-child {
+			border-bottom : none ;
+		}
+
+
+	}
+
+	.f-dropdown {
+		// width : 500px !important ;
+	}
+}
+
+.p-avatar {
+	font-size : 28px ;
+	display : inline-block ;
+	visibility:hidden;
+	width : 48px ;
+	overflow-x:hidden;
+	&:first-letter {
+		font-family:"foundation-icons"; 
+		text-transform : capitalize ;
+		color : #fff ;
+		background-color : $p-color-dark-grey ;
+		padding :5px 10px 5px 10px;
+		text-align : center; 
+		visibility:visible;
+		width : 48px ;
+		max-width: 48px;
+	}
+}
+
+
+#messages-container{
+	min-width: 260px;
+	box-shadow: 0px 0px 8px rgba(black, 0.5);
+	white-space: normal;
+}
+.message-notification {
+	background-color: $p-color-red;
+	color: #fff;
+	font-size: 11px;
+	position: absolute;
+	top: 24px;
+	left: 4px;
+	min-width: 15px;
+	max-width: 40px;
+	height: 15px;
+	border-radius:7.5px;
+	padding-left:4px;
+	padding-right:4px;
+	display: none;
+	text-align: center;
+	#contactsList &{
+		margin: 0;
+		top:0;
+		left:30px;
+	}
+}
+
+.p-notification-color-contact{
+	background-color: $p-color-contact;
+	color:white;
+}
+
+.p-notification-color-place{
+	background-color: $p-color-place;
+	color: white;
+}
+
+.place-notification{
+	background-color: #47b496;
+	display: none;
+	min-width: 18px;
+	max-width: 50%;
+	height: 18px;
+	border-radius: 9px;
+	z-index: 1;
+	margin-bottom: 0px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 18px;
+	overflow: visible;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	color: white;
+	font-size: 11px;
+	&:hover{
+		color:white;
+	}
+
+}
+
+.notifications{
+	padding : 0px ;
+	a{
+		position: relative;
+		.message-notification{
+			position: absolute;
+			line-height: normal;
+			padding: 2px 5px;
+			left: 50px;
+			top: 0;
+			display: none;
+		}
+	}
+	.timeago{
+		color: #CCC
+	}
+	li.unread{
+		border-left: 4px solid #F26C4F;
+	}
+}
+#messages{
+	max-height: 250px;
+	overflow-y: auto;
+	width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	padding-left: 0 !important;
+	.notif{
+		width: 100%;
+		padding-left: 0;
+		border-bottom: 1px solid $p-color-grey;
+		position: relative;
+		div{word-wrap:break-word}
+		&.unread{
+			&:before{
+				content:"";
+				position: absolute;
+				left:0;
+				height:100%;
+				border-left: 4px solid $p-color-orange;
+			}
+		}
+		&:last-child{
+			border: none;
+		}
+	}
+	.p-avatar{
+		margin-left: 5px;
+		line-height: 40px;
+		vertical-align: top;
+		margin-top: 4px;
+	}
+	.m-content{
+		width: 75%;
+		display: inline-block;
+		.message-notif{
+			width: 100%;
+			display: inline-block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			&.label{
+				width: auto;
+				display: inline;
+				background-color: $p-color-content;
+			}
+		}
+		.m-sender{
+			color: $p-color-dark-grey;
+			.message-notif:before{
+				width: 8px;
+				display: inline-block;
+				border-radius:4px;
+				height: 8px;
+				content: "";
+				background: $p-color-green;
+			}
+		}
+		.m-last-content{
+			color: $p-color-black;
+			font-weight: bold;
+		}
+	}
+
+}
+#notifications{
+	-webkit-animation-duration:0.4s;	
+}
+
+// dropdown notifications header
+.notification-dropdown-header{
+	padding: 0.5rem;
+	border-bottom: solid 1px black;
+	color: $p-color-contact;
+
+	.p-button-round{
+		margin:0px;
+		margin-top:-2px;
+	}
+}
+
+// Notification
+
+.notification-message {
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #d0dbdd;
+	width: 400px;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	z-index: 100;
+	padding: 20px 20px 20px 20px;
+
+	p {
+		font-size: 13px;
+	}
+
+}

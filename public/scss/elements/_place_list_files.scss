@@ -1,0 +1,325 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.p-file-actions{
+	span{
+		margin-right: 10px;
+	}
+}
+.p-file-deleting{
+	background:$p-color-grey;
+}
+.p-popup-picture{
+	max-height: 80%;
+	margin: 10px auto 10px;
+	display: block;
+}
+.p-popup-picture-div{
+}
+
+.p-gallery{
+	margin: 0;
+	// width: 100% !important;
+	.p-gallery-picture{
+		width: 100%;
+		height: 100px;
+		display: block;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.p-file-table{
+	border: none;
+	width: 100%;
+	table-layout:fixed;
+	.small-size{
+		width: 35px;
+	}
+	.medium-size{
+		width: 60px;
+	}
+	.large-size{
+		width: 100px;
+	}
+	.extra-large-size{
+		width:150px;
+	}
+	div.dropdown{
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		background: white;
+		padding: 0;
+		width: 100px;
+		color:black;
+		@include box-shadow($p-color-dark-grey 1px 0px 2px 1px);
+		&.open{
+			display: block;
+		}
+		ul {
+			margin-bottom: 0; 
+			li{
+				font-weight: 100;
+				padding: 5px 5px;
+				cursor: pointer;
+				height: 30px;
+				&:hover{
+					background:$p-color-background-light;
+				}
+			}
+		}
+	}
+	.active div.dropdown{
+		display: block;
+		z-index: 20;
+	}
+	.select-disable .item-checkbox{
+		opacity: 0.4;
+		z-index: 1;
+	}
+	input[type="checkbox"]{
+		padding-top: 3px;
+		margin: 0 auto;
+		display: inline-block;
+		-webkit-appearance: none;
+		width: 12px;
+		height: 12px;
+		background: url("/images/p-checkbox.svg") no-repeat;
+		outline: none;
+		&:checked{
+			background-position: 0px -25px !important;
+		}
+		&.select-disable{ opacity: 0.4}
+	}
+
+	thead{
+		background: none;
+		border-bottom: solid 1px $p-color-background-middle;
+		tr th{
+			padding: 8px;
+			color:$p-color-background-middle;
+			font-weight: normal;
+			&:first-child{
+				position:relative;
+				width:45px;
+				&:hover{
+					@include box-shadow(inset 0px 0px 9px -2px #ABABAB);
+				}
+				&.active{
+					@include box-shadow(inset 0px 0px 9px 1px #ABABAB);
+				}
+				.arrow-down{
+					display: inline-block;
+					border-top-color:$p-color-background-middle;
+					&:hover{
+						border-top-color:$p-color-background-middle-dark
+					}
+				}
+			}
+		}
+		th.sorters{
+			position: relative;
+			&.asc{
+				color: $p-color-background-middle-dark !important; 
+				&::after{
+					content:"";
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 5px 6px 5px;
+					border-color: transparent transparent $p-color-background-middle-dark transparent;
+					position: absolute;
+					display: inline;
+					margin-left: 10px;
+					bottom: 14px;
+				}
+			}
+			&.dsc{
+				color: $p-color-background-middle-dark !important;
+				&::after{
+					content:"";
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 6px 5px 0 5px;
+					border-color: $p-color-background-middle-dark transparent transparent transparent;
+					position: absolute;
+					display: inline;
+					margin-left: 10px;
+					bottom: 14px;
+				}
+			}
+		}
+	}
+	tbody tr {
+		height: 40px;
+		&.p-unread{
+			font-weight: bolder;
+		}
+		&.p-new{
+			input[type="checkbox"]{
+				background-position: 0px -14px;
+			}
+		}
+		td {
+			&:first-child{
+				padding-left: 8px;
+			}
+			border:solid 0px;
+			border-bottom-width:1px;
+			border-color:transparent;
+			font-family: "opensans";
+			font-size: 10pt;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: auto;
+			white-space:nowrap;
+			&.file_icon {
+				background: url(../images/picto-generic.svg) no-repeat center;
+				background-size: contain;
+				padding-left: 6px;
+				padding-right: 0px;
+				color:white;
+				width: 35px !important;
+				span {
+					font-size:7pt;
+					color:white;
+					padding-right: 2px;
+					background-color: $p-color-file-extension;
+				}
+			}
+			&.inprogress {
+				background: url(../images/inprogress.gif) no-repeat center;
+				background-size:13px;
+				width: 35px !important;
+				span {display: none;}
+			}
+			&.filename {
+				white-space: nowrap;
+				width:30%;
+			}
+			&.renaming {padding: 0px 0px;}
+			input[type="text"]{ 
+				padding: 0;
+				margin: 7.6px;
+				height: 50%;
+				border: 1px solid $p-color-content;
+				box-shadow: none;
+				transition: width 0.25s;
+			}
+		}
+		.place-icon{
+			width: 30px;
+		}
+		&:hover td{ 
+			border-color:$p-color-content;
+			&.place-icon {
+				background-repeat: no-repeat;
+				background-position:center;
+				background-size:13px;
+				padding: 5px;
+			}
+			&.view {
+				background-image: url(../images/view.svg);
+				&:hover {background-image: url(../images/over-view.svg);}
+			}
+			&.download {
+				background-image: url(../images/download.svg);
+				&:hover {background-image: url(../images/over-download.svg);}
+			}
+			&.delete {
+				background-image: url(../images/delete.svg);
+				&:hover {background-image: url(../images/over-delete.svg);}
+			}
+		}
+		&:nth-of-type(even) {background: transparent;}
+	}
+}
+
+.p-file-selected{
+	background-color: rgba($p-color-content, 0.15) !important;
+}
+
+.p-file-tooltip{
+	li {
+		font-family : "opensans" ;
+		font-size: 9pt;
+	}
+	li:first-child {
+		font-weight: bold
+	}
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+.p-contact-table{
+	table-layout: fixed;
+	word-break: break-all;
+	word-wrap: break-word;
+	border: none;
+	width: 100%;
+	border-bottom: solid 1px $p-color-grey;
+	text-align: left;
+	.p-contact-checkbox{
+		width: 10px;
+	}
+	.p-contact-table-firstname{}
+	.p-contact-table-lastname{width: 30%;}
+	.p-contact-table-status{width: 30%;}
+	thead{
+		width: 100%;
+	}
+	tbody{
+		width: 100%;
+	}
+	tr{
+		width: 100%;
+		input{margin:0}
+	}
+	thead tr:first-child{
+		border-bottom: solid 1px $p-color-grey;
+		background-color: white;
+		th{
+			font-family : "Helvetica Neue" ;
+			font-family : "opensans";
+			color: $p-color-grey;
+			font-weight : normal ;
+		}
+	}
+	td{
+		font-family : "Helvetica Neue" ;
+		color: $primary-color;
+		// font-weight: bold;
+		& input {vertical-align : middle ;}
+		&.firstname { font-weight : bold ;}
+		&.lastname { font-weight : bold ;}
+	}
+}

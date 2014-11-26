@@ -1,0 +1,113 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+/* line 5, ../scss/animation_spinners.scss */
+.spinner {
+  margin: 20px auto;
+  width: 70px;
+  text-align: center;
+}
+
+/* line 11, ../scss/animation_spinners.scss */
+.spinner > div {
+  width: 12px;
+  height: 12px;
+  background-color: #373737;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 25, ../scss/animation_spinners.scss */
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+/* line 30, ../scss/animation_spinners.scss */
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+/* line 50, ../scss/animation_spinners.scss */
+.p-loading {
+  display: inline-block;
+}
+/* line 52, ../scss/animation_spinners.scss */
+.p-loading:before {
+  display: inline-block;
+  -webkit-animation: loading 1s steps(12, end) infinite;
+}
+/* line 56, ../scss/animation_spinners.scss */
+.p-loading.p-color-place {
+  color: #24C690;
+}
+/* line 59, ../scss/animation_spinners.scss */
+.p-loading.p-color-contact {
+  color: #FF7A45;
+}
+/* line 62, ../scss/animation_spinners.scss */
+.p-loading.p-color-alert {
+  color: #D12C50;
+}
+/* line 65, ../scss/animation_spinners.scss */
+.p-loading.p-color-blue {
+  color: #25C2FB;
+}
+/* line 68, ../scss/animation_spinners.scss */
+.p-loading.p-small {
+  font-size: 25px !important;
+}
+/* line 71, ../scss/animation_spinners.scss */
+.p-loading.p-regular {
+  font-size: 40px !important;
+}
+/* line 74, ../scss/animation_spinners.scss */
+.p-loading.p-big {
+  font-size: 60px !important;
+}
+
+@-webkit-keyframes loading {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

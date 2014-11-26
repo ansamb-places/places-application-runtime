@@ -1,0 +1,18 @@
+{
+	"name":"content_manager",
+	"description":"handle content related incoming messages and http api to manage content",
+	"private":true,
+	"main":"index",
+	"version":"0.0.1",
+	"plugin":{
+		"consumes":[
+			"database_manager",
+			"communication_layer",
+			"api.place",
+			"api.place.ansamber",
+			"events",
+			"protocol.builder"
+		],
+		"provides":["content_manager"]
+	}
+}

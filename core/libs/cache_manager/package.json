@@ -1,0 +1,11 @@
+{
+	"name":"cache_manager",
+	"version":"0.0.1",
+	"description":"this plugin provides a persitant cache library for global purpose",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[],
+		"provides":["cache"]
+	}
+}

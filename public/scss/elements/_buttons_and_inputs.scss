@@ -1,0 +1,423 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+input,a{
+	// disabled outlines
+	outline:none !important;
+}
+
+// BUTTON
+// Using the available options
+button {
+	// $bg: #54cff5;
+	// background-color : $bg ; 
+
+	:hover, :focus, .button:hover, .button:focus {
+		background-color: #cf4e36;
+	}
+
+	.secondary, .button.secondary {
+		background-color: #d0dbdd;
+		color: #2f3538;
+	}
+
+	.secondary:hover, .secondary:focus, .button.secondary:hover, .button.secondary:focus {
+		background-color: #b9c4c6;
+	}
+}
+
+input {
+	@include radius(0) ; 
+	
+	[type="search"] {
+		border-radius: 5px;
+		background-color: #51575a;
+		border-radius: 5px;
+		border-color: #51575a;
+		margin-top: -14px;
+		width: 260px;
+		height: 40px;
+	}
+	&[type="text"],&[type="email"],&[type="password"]{
+		border-radius: 5px;
+		&:focus{
+			border-color: $p-color-contact;
+			box-shadow:none;
+			background-color: white;
+		}
+	}
+	&[type="submit"]{
+		border:none;
+	}
+}
+
+@mixin p-button-search($bg:$primary-color, $border-color:$primary-color, $radius:false, $disabled:false) {
+  // We control which background styles are used,
+  // these can be removed by setting $bg:false
+  @if $bg {
+    // This find the lightness percentage of the background color.
+    $bg-lightness: lightness($bg);
+
+    background-color: $bg;
+    // border-color: scale-color($border-color, $lightness: $button-function-factor);
+    // border-color : $border-color !important;
+    // border-style : 1px solid ;
+    border: 1px  solid $border-color ;
+    padding-bottom : 4px !important ;
+    &:hover,
+    &:focus { 
+    	background-color: scale-color($p-btn-primary-color, $lightness: $button-function-factor); 
+    }
+
+    // We control the text color for you based on the background color.
+    @if $bg-lightness > 70% {
+      color: $button-font-color-alt;
+      &:hover,
+      &:focus { color: $button-font-color-alt; }
+    }
+    @else {
+      color: $button-font-color;
+      &:hover,
+      &:focus { color: $button-font-color; }
+    }
+  }
+
+ 
+  // We can control how much button radius us used.
+  @if $radius == true { @include radius($button-radius); }
+  @else if $radius { @include radius($radius); }
+
+}
+
+
+.p-search-button {
+	margin-left : -1px ;
+	// color : #ccc ;
+
+	@include p-button-search(#fff,#cccccc);
+	@include button-size($button-tny);
+	
+	&:hover {
+		color : scale-color(#fff, $lightness: 0%);
+	}
+
+}
+
+#p-search-input {
+	z-index: 1;
+	height: 32px;
+	box-shadow: none;
+	border-radius:5px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAIVBMVEW/v7+/v78AAAC/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v79QUkolAAAAC3RSTlOLYAAJeoMjRhpOcbsbtd4AAABJSURBVHjaVc1JDsAgDATB9uAF8v8Hx0QcSN9KssZI5eClDj18PRsFlmlQDcfUGd6A3EgYP1xncQ+sa5qYOk9jRQt1Y0izhU5bL2o2AW3ZQKeJAAAAAElFTkSuQmCC) no-repeat; 
+	background-position:98%;
+	border-color:$p-color-dark-grey;
+	&::-webkit-input-placeholder {
+	   color: $p-color-dark-grey;
+	}
+}
+
+.p-button {
+	// @extend .p-search-button ;
+	font-weight : bold ;
+	// height : 30px ;
+	// margin : 0px ;
+	// width : 100% ;
+	width : 100% ;
+	line-height : 5px !important;
+	// margin-bottom : -15px ;
+	$padding : $button-med ;
+	$radius: false;
+	// $radius: 1000px;
+	$disabled: false;
+	$full-width : false ;
+
+	@include button-base(true,$button-display);
+  	@include button-size($padding,$full-width);
+	@include button-style($p-btn-primary-color,$radius,$disabled) ;
+
+	&.tiny {
+		$padding : $button-sml ;
+	  	@include button-size($button-tny,true);
+
+	}
+
+	&.primary {
+		@include button-style($p-btn-primary-color,$radius,$disabled) ;
+	}
+	&.secondary {
+		@include button-style($p-btn-secondary-color,$radius,$disabled) ;
+	}
+}
+form.register{
+	input:focus{
+		&:invalid{
+			//box-shadow:1px 1px 10px red !important;
+		}
+		&:valid{
+			//box-shadow:1px 1px 10px green !important;
+		}
+	}
+}
+.p-button-round{
+	border-radius:12px;
+	min-height:25px;
+	display:inline-block;
+	text-align:center;
+	margin:4px;
+	padding-top:4px;
+	padding-left:5px;
+	padding-right:5px;
+	cursor:pointer;
+	border:none;
+	&:hover{
+		box-shadow: inset 0px 0px 8px rgba(black, 0.5);
+	}
+	&.disabled{
+		cursor:default;
+		&:hover{
+			box-shadow: none;
+			color: $p-color-background-middle;
+			background-color: $p-color-grey !important;
+		}
+		color:$p-color-background-middle;
+	}
+}
+.p-button-round-rec{
+	@extend .p-button-round;
+	border-radius:5px;
+}
+.p-button-round-placeholder{
+	border-radius:12px;
+	min-height:25px;
+	display:inline-block;
+	margin:4px;
+	color:transparent;
+	background: transparent;
+	padding-top:4px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.p-background-contact{
+	background-color: $p-color-contact;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark;
+	}
+}
+
+.p-background-place{
+	background-color: $p-color-place;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark
+	}
+}
+
+.p-background-content{
+	background-color: $p-color-content;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark
+	}
+}
+.p-background-confirm{
+	background-color: $p-color-alert !important;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark !important;
+	}
+}
+
+.p-background-grey{
+	background-color: $p-color-dark-grey;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark;
+	}
+}
+
+.p-background-alert{
+	background-color: $p-color-light-red;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark;
+	}
+}
+
+.p-background-blue{
+	background-color: $p-color-places-blue;
+	color:white;
+	&:hover{
+		color:white;
+		background-color: $p-color-background-dark;
+	}
+}
+
+.p-smaller-text{
+	font-size: 14px;
+}
+
+.p-button-main{
+	margin-left: 10px;
+	border-width:0px;
+	//border-bottom-width:1px;
+	//border-style:solid;
+	border-radius:5px;
+	display:block;
+	height:30px;
+	text-align:left;
+	font-size: $p-font-normal-size ;
+	font-weight: bold;
+	margin-top:10px;
+	padding-top:5px;
+	color:white !important;
+	text-align: center;
+	&.p-button-color-places{
+		cursor:text;
+		background: $p-color-place;
+	}
+	&.p-button-color-contact{
+		background: $p-color-contact;
+		margin-left: 20px;
+		margin-right: 10px;
+	}
+}
+
+.p-button-color-places{
+	border-color: $p-color-place;
+	color:white;
+	&:hover{
+		color:white;
+	}
+}
+
+.p-button-color-contact{
+	border-color: $p-color-contact;
+	color:white;
+	&:hover{
+		color:white;
+	}
+}
+.p-invite-button{
+	position:absolute;
+	right:0;
+	padding: 0px 25px;
+	min-height: 6px;
+	line-height: 20px;
+}
+.p-button-padding{
+	min-height: 6px;
+	padding: 0 25px;
+	line-height: 21px;
+}
+.p-search-input{
+	border-radius:5px;
+}
+
+.select-contact-checkbox{
+	float:left;
+	width: 20px;
+	height: 20px;
+	background: #fcfff4;
+	border-radius: 10px;
+	margin-bottom:0px !important;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	box-shadow: inset 0px 1px 1px white
+}
+
+.select-contact{
+	&.uid{
+
+		text-align: left;
+		padding-left:10px;
+	}
+}
+
+.select-contact-item{
+	width:100%;
+	height:20px;
+	border-radius: 5px;
+	margin-top: 5px;
+	&:hover{
+		border-bottom: 1px solid $p-color-contact;
+	}
+}
+// Used in the search bar 
+.p-search-header{
+	font-size: 12pt;
+	padding-left: 5px;
+	margin-bottom: 0px;
+	&.contact-header{color: $p-color-contact;}
+	&.place-header{color: $p-color-place;}
+}
+.tt-dropdown-menu{
+	width : 100% ;
+	background-color: rgba(255, 255, 255, 0.95);
+	box-shadow: 0px 5px 10px rgba(black, 0.5);
+	.tt-dataset-Places{
+		p:hover{
+			background-color:$p-color-place;
+			opacity: 0.5;
+		}
+	}
+	.tt-dataset-Contacts{
+		border-bottom: solid 1px $p-color-grey;
+		p:hover{
+			background-color:$p-color-contact;
+			opacity: 0.5;
+		}
+	}
+}
+.suggestion{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 12pt;
+}
+.last-update-suggestion {
+	color: $p-font-color;
+	font-weight: normal;
+	font-size: 9pt;
+	font-style: italic;
+}
+.empty-message {
+	color: $p-font-color;
+	font-weight: normal;
+	font-size: 9pt;
+	font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.p-import-contacts-form{
+	display:none;
+}
+.p-color-contact{
+	color:$p-color-contact;
+}

@@ -1,0 +1,10 @@
+{
+	"name":"framework.router",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"plugin":{
+		"consumes":["api.account","communication_layer","server","protocol.builder"],
+		"provides":[]
+	}
+}

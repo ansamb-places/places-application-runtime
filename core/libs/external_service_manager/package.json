@@ -1,0 +1,10 @@
+{
+	"name":"external_service_manager",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"plugin":{
+		"consumes":["server"],
+		"provides":["external_service_manager"]
+	}
+}

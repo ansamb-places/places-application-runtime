@@ -1,0 +1,189 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.p-dialog-content{
+	width:80%;
+	left:10%;
+	margin-left:10%;
+	padding-left:10%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.dialog-button{
+	display:inline-block;
+	width:80px;
+	margin:auto;
+	color:#879499;
+	&.selected{
+		border-style:solid;
+		border-width:0px;
+		border-bottom-width:2px;
+	}
+	&:active{
+		border-bottom-width:3px;
+		font-weight:bold;
+	}
+}
+
+.dialog-button:active{
+	text-decoration:bold;
+}
+
+#dialogRegion{
+	display:none;
+	position:absolute;
+	background-color:white;
+	width:400px;
+	min-height:80px;
+	max-height:700px;
+	color:black;
+	border-style:solid;
+	border-width:0px;
+	border-top-width:3px;
+	border-radius: 8px;
+	left:35%;
+	top:80%;
+	box-shadow:#AAAAAA 0px 0px 15px;
+	text-align:center;
+	border-color:$p-color-blue;
+	padding:10px;
+}
+
+.b-modal{
+	opacity:0 !important;
+}
+
+.p-border-orange{
+	border-color:$p-color-orange !important;
+}
+
+.p-border-red{
+	border-color:$p-color-red !important;
+}
+
+.p-border-blue{
+	border-color:$p-color-blue !important;
+}
+
+.p-border-contact{
+	border-color:$p-color-contact !important;
+}
+
+.p-border-place{
+	border-color:$p-color-place !important;
+}
+
+.p-border-content{
+	border-color:$p-color-content !important;
+}
+
+
+.p-border-blue .p-blue{
+	color:$p-color-blue !important;
+	border-color: $p-color-blue;
+}
+
+.p-border-red .p-red{
+	color:$p-color-red !important;
+	border-color: p-color-red;
+}
+
+.p-border-orange .p-orange{
+	color:$p-color-orange !important;
+	border-color:$p-color-orange;
+}
+
+.p-small-dialog-buttons{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	bottom:0px;
+	display:block;
+	padding:auto;
+}
+
+.p-small-dialog-content{
+	color:black !important;
+	display:block;
+	padding-top:8px;
+	position:relative;
+	text-align:center;
+	border-radius: 8px;
+	top:0px;
+	margin-bottom: 20px;
+}
+
+.p-open{
+	display:block !important;
+}
+
+.p-dialog-buttons{
+	width:50%;
+	margin-left: 25%;
+	padding-bottom: 50px;
+	bottom:50px;
+}
+
+.p-default-button{
+	width:100%;
+	text-align:center;
+	color:$p-color-dark-grey;
+	&:hover{
+		color:black;
+	}
+}
+#popupRegion{
+	margin-bottom: 0 !important;
+	.mejs-container{
+		margin:0 auto;
+	}
+	video{
+		margin:0 auto;
+		display:block;
+	}
+}
+
+.popup-close{
+	position:absolute !important;
+	display:block !important;
+	top:10px !important;
+	right:10px !important;
+	font-size: 1rem !important;
+	line-height: 1!important;
+	color: black !important;
+	font-weight: bold !important;
+	cursor: pointer !important;
+	&:hover{
+		color: $p-color-contact !important;
+	}
+}
+//FILEMANAGER info Popup
+.p-info-file-list{
+	text-align:left;
+	ul{
+		margin-left:20px;
+		width: 98%;
+	}
+	li{
+		text-overflow: ellipsis;
+		overflow-x: hidden;
+	}
+}

@@ -1,0 +1,8 @@
+/node_modules/
+databases/application/storage/*.sqlite
+databases/places/storage/*.sqlite
+databases/core_migration/storage/*.sqlite
+/framework
+/build
+.sass-cache/
+.DS_Store

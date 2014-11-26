@@ -1,0 +1,17 @@
+{
+	"name":"document.network.broker",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will handle documents coming from the network and make them nodejs-api compliant",
+	"plugin":{
+		"consumes":[
+			"api.place",
+			"api.place.ansamber",
+			"application.registery",
+			"api.place.content",
+			"api.account"
+		],
+		"provides":["document.network.broker"]
+	}
+}

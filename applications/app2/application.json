@@ -1,0 +1,8 @@
+{
+	"name":"app2",
+	"contentType":"otherType",
+	"models_dir":"models",
+	"models_version":"0.0.1",
+	"migration_dir":"migrations",
+	"author":"rudylacrete"
+}

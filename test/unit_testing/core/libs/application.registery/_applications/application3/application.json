@@ -1,0 +1,10 @@
+{
+	"name":"application3",
+	"contentType":"content1",
+	"js":false,
+	"models_dir":"models",
+	"models_version":"0.0.1",
+	"migration_dir":"migrations",
+	"author":"rudylacrete",
+	"icon":"fi-page-edit"
+}

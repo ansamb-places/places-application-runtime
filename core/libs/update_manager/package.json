@@ -1,0 +1,11 @@
+{
+	"name":"update_manager",
+	"version":"0.0.1",
+	"description":"this plugin check updates, ask user whether to install them",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["server", "events","notification_manager","api.account"],
+		"provides":[]
+	}
+}

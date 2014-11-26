@@ -1,0 +1,11 @@
+{
+	"name":"websocket_manager",
+	"version":"0.0.1",
+	"description":"this plugin initializes and manage all websockets",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["server"],
+		"provides":["client_websocket"]
+	}
+}

@@ -1,0 +1,358 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+html {
+	width : 100% ;
+	font-family : 'opensans' ;
+    overflow:hidden;
+}
+
+body {
+	width : 100% ;
+	font-size : $p-font-normal-size ;
+	color: $primary-color;
+	display: flex;
+  	// min-height: 100%;
+  	// height : 100% ;
+  	flex-direction: column;
+  	font-size: $p-font-normal-size;
+  	// background-color : rgb(241, 241, 241);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'opensans', sans-serif;
+}
+
+a {
+	color: #f26c4f;
+
+	:hover, :focus{
+		color: #cf4e36;
+	}
+}
+
+ul {
+	list-style-type: none;
+	margin-left: 0rem;
+}
+
+hr {
+	margin-right: 20px;
+	margin-left: 15px;
+	border: solid #ecf2f2;
+	border-width: 1px 0 0;
+}
+
+li {
+	font-size: 10pt;
+}
+
+.background-sky  {
+    background:$p-color-background-light;
+}
+
+// used in header and chat area
+.top-bar {
+	// text-align : center ;
+	// display : flex ;
+	// flex : 1 0 auto ;
+}
+
+#p-main-content{
+	height : 100vh ;
+	overflow : hidden ;
+	width : 100% ;
+	position : absolute ; 
+	padding-top : 67px ;
+
+}
+
+.hide{
+	display: none !important;
+}
+
+#webwewant {
+	p {
+		font-size : rem-calc(11px) ;
+		margin : 0px ;
+	}
+	position : absolute ;
+	bottom : 0px ;
+	right : 20px ;
+}
+#p-init-page-container{
+	background-color: transparent;
+	margin:0 auto;
+	.p-single-content-container {
+		background-color : white ;
+		border-radius:5px;
+		text-align: center;
+		margin:0 auto;
+		width:800px;
+	}
+}
+/// REGISTER
+
+.submit-loading{
+	display: none;
+	position: absolute;
+	left:0;
+	z-index: 12;
+	width: 100%;
+	height:	100%;
+	padding: auto;
+	text-align: center;
+	.p-loading{
+		position: absolute;
+		top: calc(50% - 34px);
+		right: calc(50% - 34px);
+	}
+}
+
+.p-form-step {
+	color : $p-color-place;
+	font-size : 1.75em !important ;
+	font-weight : normal ;
+	margin-bottom : 10px ;
+}
+
+.p-form-title {
+	color : $p-color-place;
+	font-size : 1.45em !important ;
+	font-weight : lighter ;
+	margin-bottom : 20px ;
+}
+
+.p-form-main.p-single-content-container{
+	margin-bottom:0 !important;
+	margin-top : 1% !important;
+}
+.p-form-main {
+	$padding : 40px ;
+	padding :  $padding !important ;
+		// padding-left : $padding !important;
+	padding-top : $padding !important;
+	position:relative;
+	form{
+		position:relative;
+		margin-top: $padding;
+		a{
+			line-height: 28px;
+		}
+	}
+	.p-color-contact{
+		font-weight: bolder;
+	}
+	.pageload-overlay{
+		position:absolute;
+		width: 100%;
+		height:100%;
+		background:white;
+		display:none;
+		&:after,&:before{
+			visibility:visible;
+			opacity:1;
+			position:absolute;
+		}
+	}
+	.form {
+		& label {
+			margin-bottom : 0px ;
+			padding-bottom : 0px ;
+		}
+
+		& > input  {
+			margin-bottom : 0px ;
+			padding-bottom : 0px ;
+			font-weight : light ;
+		}
+	}
+	a.forget{
+		color:black;
+		&:hover{
+			color:$p-color-alert;
+			text-decoration: underline;
+		}
+	}
+}
+.p-request-alert-box{
+	&.no-visible{
+		visibility:hidden;
+	}
+	&::before{
+		position:absolute;
+		font-family: entypoRegular;
+		font-size: 4em;
+		content:'\26A0';
+		left:5px;
+		//top:-5px;
+	}
+	margin-top: 20px;
+	border-style: none;
+	border-width: 1px;
+	color:white;
+	display: block;
+	border-radius: 5px;
+	background-color:$p-color-alert;
+	font-weight: normal;
+	margin-bottom: 1.25rem;
+	position: relative;
+	padding: 0.875rem 1.5rem 0.875rem 2.875rem;
+	font-size: 0.8125rem;
+	box-sizing:border-box;
+	line-height: 1.5em;
+}
+
+.p-request-info-box{
+	@extend .p-request-alert-box;
+	background-color:$p-color-place;
+	&::before{
+		position:absolute;
+		font-family: entypoRegular;
+		font-size: 4em;
+		content:'\E705';
+		left:5px;
+		//top:-5px;
+	}
+}
+
+.p-add-files{
+	display:none;
+}
+#tos{
+	top:0;
+	bottom:0 !important;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-sizing:border-box;
+	padding-right:0;
+	pre{
+		padding-right:30px;
+		word-break: break-word;
+		height: 100%;
+		overflow-y: auto;
+	}
+}
+
+#tos-href {
+	font-size : 16px;
+	color: black;
+	&:hover{
+		color:$p-color-contact;
+	}
+}
+
+// no link overlay
+.p-freeze{
+	width: 100%;
+	height: 100%;
+	background:rgba(255,255,255,0.8);
+	z-index:999;
+	top:0;
+	position:absolute;
+	.p-middle{
+		position:absolute;
+		top:50%;
+		width:100%;
+		text-align: center;
+		.p-message{
+			display: block;
+		}
+		.p-button-round{
+			width:auto;
+			padding:0 20px;
+		}
+	}
+}
+// Scrollbar
+
+::-webkit-scrollbar              {
+	width:4px;
+}
+::-webkit-scrollbar-track        { 
+	background-color:transparent;
+}
+::-webkit-scrollbar-thumb        {
+	background-color: $p-color-dark-grey;
+	border-radius:2px;
+ }
+
+.places-intro{
+	text-align:justify;
+	margin:10px 25px 10px;
+}
+
+//- /!\---------------
+//-
+//- Potentially unused
+//-
+//- ---------------/-\
+
+#main-content {
+	// height : 100% ;
+}
+
+.main-navigation {
+
+	display: inline;
+	list-style-type: none;
+
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right !important;
+}
+
+.downloads {
+	height: 3.125rem;
+	padding: 10px 0 50px 60px;
+	float: left;
+}
+
+.upgrade {
+	height: 3.125rem;
+	padding: 10px 0 50px 60px;
+	float: left;
+	font-size: 14px;
+}
+
+.settings {
+	height: 3.125rem;
+	padding: 10px 0 80px 80px;
+	float: left;
+}
+
+.search {
+	height: 3.125rem;
+	padding: 30px 25px 50px 60px;
+
+	.search-icon {
+		position: relative;
+		top: 0;
+		bottom: 0;
+	}
+
+	.left {
+		float: left;
+	}
+}

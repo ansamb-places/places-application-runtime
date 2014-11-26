@@ -1,0 +1,39 @@
+{
+    "reg": {
+    	"form": {
+	        "step": "Etape",
+			"out_of": "sur",
+			"create_your_account": "Création du compte",
+			"create_your_account_desc": "Veuillez entrer les informations nécessaires à la création du compte, puis cliquez sur le bouton Créer.",
+			"firstname_placeholder": "prénom",
+			"firstname_title": "ne doit pas commencer avec un espace",
+			"lastname_placeholder": "nom",
+			"lastname_title": "ne doit pas commencer avec un espace",
+	    	"email_placeholder": "un email valide pour recevoir des informations importantes concernant votre compte",
+	    	"email_title": "doit être un email valide",
+	    	"password": "mot de passe",
+	    	"password_placeholder": "ce mot de passe sera utilisé pour accéder à votre compte",
+	    	"password_title": "doit faire 8 caractères ou plus",
+	    	"password-confirm_placeholder": "confirmer votre mot de passe",
+	    	"password-confirm_title": "confirmez votre mot de passe",
+	    	"button_submit_create": "Créer",
+	    	"tos": "conditions d'utilisation des services"
+		},
+		"valid": {
+			"check_your_email": "Vérifiez votre boite mail",
+    		"desc1": "Vous devez à présent valider votre compte en cliquant sur le lien d'activation",
+    		"desc2": "qui vous a été envoyé à l'adresse",
+    		"desc3": "",
+    		"desc4": "<strong>Note: </strong>veuillez vérifier votre <strong>boite spam</strong>. Si l'email de validation",
+    		"desc5": "ne vous est pas parvenu dans les 15 prochaines minutes, <a href='#' onclick='$(\"form\").show();$(this).parent().hide()'>cliquez ici</a>.",
+    		"button_submit_resend": "Renvoyer l'email"
+		},
+    	"login": {
+    		"log_in": "Connexion",
+    		"email_placeholder": "Votre adresse email",
+    		"email_title": "doit être une adresse valide",
+    		"password_placeholder": "Votre mot de passe",
+    		"button_submit_login": "Connexion"
+    	}
+	}
+}

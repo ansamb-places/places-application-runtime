@@ -1,0 +1,81 @@
+<!--
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<div class="conversation-div">
+<div class='dropOverlay'>
+		<div class='notif'>Drop it!</div>
+</div>
+<section class="module" id="<%- placeName %>">
+	<header class="top-bar"> 
+		<div class="left">
+			<!-- <span class="online-left"></span> -->
+			<!-- <span class="entypo">
+			&#59160;
+			</span> -->
+			<span class="ansambers">
+			  <% _.each(ansambers,function(item,index){ %>
+			    <span class='ansamber-name'><%-item.firstname%> <%-item.lastname%></span>
+			  <% }) %>
+			</span>
+		</div>
+		<div class="right">
+			<a class="p-ci add-contact"><span class="fi-plus"></span></a>
+			<a class="p-ci visio-contact"><span class="fi-video"></span></a>		
+			<a class="p-ci audio-contact"><span class="fi-telephone"></span></a>
+			<a class="p-ci close-chat"><span class="fi-x"></span></a>
+		</div>
+	</header>
+	<div class="conversation ">
+		<ol class="discussion">
+		</ol>
+		<div class="reply">
+			<textarea id="new_post" type="text" placeholder="Add A Reply"/>
+		</div>
+	</div>
+</section>
+</div>
+
+<!-- <section class="conversation-box" id="<%- placeName %>">
+	<div class='dropOverlay'><div class='notif'>Drop it!</div></div>
+	<div class="header">
+		<p>
+			<span class="name"><%- placeName %></span>
+			<span class="right">
+				<a class="close-chat">
+					<img src="/images/close.png">
+				</a>
+			</span>
+			<span class="right">
+				<a href="#" class="setFullScreen">
+					<img src="/images/expand.png">
+				</a>
+			</span>
+			<span class="right add-contact">
+				<a href="#" class="entypo">&#59136;</a>
+			</span>
+		</p>
+	</div>
+	<div class="conversation">
+	</div>	
+	<div class="reply">
+		<form>
+			<input id="new_post" type="text" placeholder="Add A Reply"/>
+		</form>
+	</div>
+</section> -->

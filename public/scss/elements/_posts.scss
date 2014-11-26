@@ -1,0 +1,373 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.p-post-dragndrop-container {
+	margin-bottom : 12px ;
+	display : none ; 
+	margin-left : 0px ;
+	padding-left : 0px ;
+	// height : 10px ;
+	font-size : $p-font-normal-size;
+
+}
+
+.p-post-dragndrop {
+	height : 100px ;
+	// border : 1px solid #ccc ;
+	background-color : #eee;
+	// background-color : $p-btn-secondary-color ;
+	color : $primary-color;
+	font-size : $p-font-normal-size ;
+	font-weight : light ;
+	padding-top : 30px ;
+	// margin-bottom : 5px ;
+	margin : 0px ;
+	// margin-left : 0px ;
+	// padding-left : 0px ;
+}
+
+
+#p-place-detail-view-composer{
+	// margin-left:0 auto;
+	margin : 0px ; 
+	padding : 0px ; 
+	// background-color : #f2f2f2 ;
+	// border : #c7c7c7 1px solid ;
+	// margin-top : 30px ;
+
+	.composer{
+		// padding : 20px ;
+		// min-height: 136px;
+		// margin-bottom:10px;
+		padding : 0px ;
+		margin : 0px ;
+		::-webkit-input-placeholder {
+			// text-align:center;
+			font-size:$p-font-normal-size ;
+		}
+	}
+	.button{
+		// margin-bottom: 10px;
+	}
+	textarea{
+		// margin-bottom: 10px;
+	}
+
+	.application-list{
+		display : hidden ;
+		// display : invisible ;
+		// min-height: 36px;
+		// position: relative;
+		// background-color: #8a9499;
+		// border-radius: 5px;
+		ul{
+			list-style: none;
+			li{
+				float: left;
+				padding: 20px 10px;
+			}
+		}
+
+		.p-application-icon {
+			font-size : 30px ;
+		}
+	}
+
+	.postinput{
+		// @extends .sky ;
+		// resize:none;
+		// margin:0;
+		height: 34px;
+		border : 0px ;
+		// background-color : rgba(0,0,0,1) ;
+		background-color : rgba(255,255,255,0.4) ;
+		// background-color : $p-tool-bar-background-color ;
+	}
+
+	.postinputarea{
+		// @extends .sky ;
+		// resize:none;
+		// margin:0;
+		font-size : $p-font-normal-size ;
+		height: 84px;
+		border : 0px ;
+		width : 100% ;
+		resize: none;
+		// background-color : rgba(0,0,0,1) ;
+		background-color : rgba(255,255,255,0.4) ;
+		// background-color : $p-tool-bar-background-color ;
+		::-webkit-input-placeholder {
+			font-color : $p-color-grey;
+		}
+	}
+
+	.fileinput{
+		margin:0;
+	}
+}
+
+.p-composer-container {
+	@extend .p-single-content-container ;
+	margin-bottom : 25px !important;
+	// width: 100% !important; =======
+}
+
+.p-content-post {
+	// border : 1px solid #ccc ;
+	border-bottom : 1px solid #ccc ;
+	padding : 3px ;
+	// background-color : #f3f3f3 ; 
+	width : 100% ;
+}
+
+
+.p-post-area {
+	position: relative;
+	width: 100% ;
+	height: 90px;
+	padding: 0px;
+	background: $p-tool-bar-background-color;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border: #54cff5 solid 3px;
+}
+
+
+.p-post-area:after 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 8px 8px 8px 0;
+	border-color: transparent $p-tool-bar-background-color;
+	display: block;
+	width: 0;
+	z-index: 2;
+	left: -6px;
+	top: 12px;
+}
+.p-post-area:before 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 8px 8px 8px 0;
+	border-color: transparent $p-color-blue;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -10px;
+	top: 12px;
+}
+
+.p-post 
+{
+	position: relative;
+	width: 100% ;
+	height: 40px;
+	padding: 0px;
+	background: $p-tool-bar-background-color;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border: #54cff5 solid 3px;
+}
+
+
+
+.p-post:after 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 8px 8px 8px 0;
+	border-color: transparent $p-tool-bar-background-color;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -8px;
+	top: 12px;
+}
+
+.p-post:before 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #54cff5;
+	display: block;
+	width: 0;
+	z-index: 0;
+	left: -13px;
+	top: 10px;
+}
+
+
+.p-post:focus {
+	height: 500px;
+    -webkit-transition: width 1s ease-in-out;
+}
+
+.p-post-content {
+	// padding : 12px ;
+	padding-top : 12px ; 
+}
+
+.avatar-feed {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 20px;
+}
+
+.name {
+	color: $p-color-orange;
+	font-size: $p-font-normal-size ;
+	font-weight : bold ;
+}
+
+.date {
+	color: $secondary-color;
+	font-size: 12px;
+	font-weight: normal;
+
+}
+
+#wall-container {
+	width : 100% ;
+}
+
+//- /!\---------------
+//-
+//- Potentially unused
+//-
+//- ---------------/-\
+
+.activityFeedContainer{
+	width : 100% ;
+	height : 100% ;
+	position: relative;
+	.loadingOverlay{
+		display: none;
+		position: absolute;
+		top:0;
+		left:0;
+		background-color: rgba(255, 255, 255, 0.6);
+		z-index: 12;
+		width: 100%;
+		height: 100%;
+		padding: auto;
+		text-align: center;
+		.notif{
+			margin-top: 90px;
+			color: black;
+			font-size: 1.3em;
+			font-weight: bold;
+		}
+	}
+}
+
+//wallView
+
+.audio-file{
+	width: 100px;
+	height: 100px;
+	background: rgba(241, 141, 141, 0.9);
+	border-radius: 10px;
+	position:relative;
+	.background{
+		position: absolute;
+		top: 30px;
+		font-size: 120px;
+	}
+	.play-audio{
+
+		font-size: 46px;
+		span{
+			color:white;
+		}
+	}
+}
+.video-file{
+	width: 100px;
+	height: 100px;
+	background: rgba(74, 201, 94, 0.9);
+	border-radius: 10px;
+	position:relative;
+
+	.background{
+		position: absolute;
+		top: 30px;
+		font-size: 120px;
+	}
+	.open-video{
+		font-size: 46px;
+		span{
+			color:white;
+		}
+	}
+}
+.video-js{
+	display: block !important;
+	margin: 0 auto !important;
+}
+.pdf-file{
+	width: 100px;
+	height: 100px;
+	background: rgba(63, 63, 63, 0.9);
+	border-radius: 10px;
+	position:relative;
+	.background{
+		position: absolute;
+		top: 30px;
+		font-size: 35px;
+	}
+	.open-pdf{
+		font-size: 46px;
+	}
+	span{
+		color:white;
+	}
+}
+.default-file{
+	width: 100px;
+	height: 100px;
+	background: rgba(49, 55, 185, 0.9);
+	border-radius: 10px;
+	position:relative;
+	.background{
+		position: absolute;
+		top: 30px;
+		font-size: 35px;
+	}
+	.open{
+		font-size: 46px;
+	}
+	span{
+		color:white;
+	}
+}
+.open-file{
+	button{
+		color: white !important;
+		font-size: 14px !important;
+	}
+}

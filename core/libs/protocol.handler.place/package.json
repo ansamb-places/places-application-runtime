@@ -1,0 +1,18 @@
+{
+	"name":"protocol.handler.place",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the place protocol",
+	"plugin":{
+		"consumes":[
+			"protocol.handler",
+			"api.place",
+			"api.place.sync",
+			"api.place.ansamber",
+			"api.account",
+			"events",
+			"protocol.builder"],
+		"provides":[]
+	}
+}

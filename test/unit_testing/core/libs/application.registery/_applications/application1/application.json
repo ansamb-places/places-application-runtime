@@ -1,0 +1,11 @@
+{
+	"name":"application1",
+	"contentType":"file",
+	"js":false,
+	"models_dir":"models",
+	"models_version":"0.0.2",
+	"migration_dir":"migrations",
+	"author":"rudylacrete",
+	"icon":"&#128193;",
+	"file_storage":true
+}

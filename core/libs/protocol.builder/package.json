@@ -1,0 +1,11 @@
+{
+	"name":"protocol.builder",
+	"version":"0.0.1",
+	"description":"this plugin help to build messages according to defined protocols",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["communication_layer"],
+		"provides":["protocol.builder"]
+	}
+}

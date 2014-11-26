@@ -1,0 +1,11 @@
+{
+	"name":"protocol.handler.contact",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the contact protocol",
+	"plugin":{
+		"consumes":["protocol.handler","api.contact","avatar_manager"],
+		"provides":[]
+	}
+}

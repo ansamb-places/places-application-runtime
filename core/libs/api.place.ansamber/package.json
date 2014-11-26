@@ -1,0 +1,11 @@
+{
+	"name":"api.place.ansamber",
+	"version":"0.0.1",
+	"description":"this plugin manages the ansambers of a place",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["server","database_manager","api.account","events","protocol.builder","notification_manager"],
+		"provides":["api.place.ansamber"]
+	}
+}

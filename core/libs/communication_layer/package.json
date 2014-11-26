@@ -1,0 +1,11 @@
+{
+	"name":"communication_layer",
+	"version":"0.0.1",
+	"description":"this plugin handle all communication from and to the kernel",
+	"main":"./index",
+	"private":true,
+	"plugin":{
+		"consumes":[],
+		"provides":["communication_layer","application_communication_api"]
+	}
+}

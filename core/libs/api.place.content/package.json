@@ -1,0 +1,22 @@
+{
+	"name":"api.place.content",
+	"version":"0.0.1",
+	"description":"this plugin provide api to manage contents within a place",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"content_manager",
+			"application.broker",
+			"application.registery",
+			"api.place",
+			"api.place.ansamber",
+			"api.account",
+			"protocol.builder",
+			"events",
+			"external_service_manager"
+		],
+		"provides":["api.place.content"]
+	}
+}

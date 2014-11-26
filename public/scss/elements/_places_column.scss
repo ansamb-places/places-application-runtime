@@ -1,0 +1,361 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.n-active{
+	border-bottom: 2px solid $p-color-place !important;
+	height:30px !important;
+}
+
+#placesMenu{
+	position: relative;
+	.places-list{
+		height:100%;
+		overflow-y: auto;
+	}
+	.p-places-menu-layout{
+		height: 100%;
+		position:relative;
+		top: 0;
+		width: 100%;
+		&.p-request-enabled{
+			.side-nav{
+				height: calc(100% - 216px)
+			}
+		}
+	}
+	.side-nav{
+		margin-top: 15px;
+		padding-left: 10px !important;
+		height: calc(100% - 70px);
+		position: absolute;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding: 0;
+		width: calc(100% + 6px);
+		&::-webkit-scrollbar{
+			visibility: hidden;
+		}
+		&:hover::-webkit-scrollbar{
+			visibility: visible;
+		}
+		#placesRequests,#places-list{
+			width: calc(100% - 6px);
+		}
+	}
+}
+
+.place {
+	position:relative;
+	max-width: 188px;
+	border-radius: 5px;
+	z-index: 10;
+
+	&.yellow {
+	background-color: #d79546;
+
+	&.yellow:hover {
+		background-color: #c78a42;
+	}
+	
+	}
+
+	&.teal {
+	background-color: #6ba69f;
+
+	&.teal:hover {
+		background-color: #62938e;
+	}
+
+	}
+
+	&.red {
+	background-color: #cf4e36;
+
+	&.red:hover {
+		background-color: #b84631;
+	}
+
+	}
+
+	&.blue {
+	background-color: #6a97a2;
+
+	&.blue:hover {
+		background-color: #598b97;
+	}
+
+	}
+
+	.folder {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 60px;
+	padding-right:60px;
+	}
+	.right{
+	position:absolute;
+	right:2px;
+	color:white;
+	font-size:15px;
+	opacity:0.8;
+	}
+}
+
+#places-list{
+	li {
+		width:100% !important;
+		position: relative;
+		margin-bottom: 6px;
+		a{
+			padding-left: 14px;
+			line-height: 30px;
+			&.mine{
+				&:before{
+					content:"";
+					width: 6px;
+					height: 6px;
+					border-radius: 100%;
+					background: #47B496;
+					display: block;
+					position: absolute;
+					top: 13px;
+					left: 2px;
+				}
+			}
+		}
+	}
+}
+
+.left-menu{
+	width: 220px;
+	color : #ccc ;
+	height : 100% ;
+	padding: 0 20px 0 0px;
+	& > ul li.heading {
+		// font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		height: 23px;
+		// font-size : 15px ;
+		// font-weight : bold ;
+		a {
+			color : #000 ;
+		}
+	}
+}
+
+.p-place-item {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size : $p-font-small-size ;
+	font-family : $p-font-family-menu ;
+	border: 2px solid transparent;
+	position:relative;
+	border-radius:5px;
+	font-size:14px !important;
+	&:hover{
+		background-color: $p-color-grey;
+		color:black !important;
+	}
+	.selected &{
+		background-color:white;
+	}
+}
+.p-menu-name{
+	color:  $p-color-background-dark;
+	&:hover{
+		color:black;
+	}
+}
+
+
+// Orange bar next to places name that you own
+.p-mark-orange {
+	content : "\00a0 \00a0 " ;
+	background-color : $p-color-orange;
+	margin-right : 3px ;
+}
+#placesRequests{
+	max-width:100%;
+	padding-left: 10px;
+}
+	.p-request{
+		line-height: 1;
+		background: white;
+		border-radius:8px;
+		margin-top: 15px;
+		.p-request-header{
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 14px;
+			text-align: center;
+			position: relative;
+			border-top-right-radius:8px;
+			border-top-left-radius:8px;
+			background-color: $p-color-grey;
+			height: 37px;
+			color: black;
+			font-weight: normal;
+			font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+			&.r-contacts{
+				
+			}
+			.p-number-request{
+				margin-left: 5px;
+			}
+		}
+		.p-request-content{
+			position: relative;
+			border-top: 2px solid $p-color-grey ;
+			padding: 12px 20px;
+			.p-request-number{
+				position: absolute;
+				right: 2px;
+				top: 2px;
+				margin-bottom: 4px;
+				color: $p-color-grey;
+			}
+			.p-request-name{
+				color: $p-color-contact;
+				font-size: 14px !important;
+				font-weight: bold;
+				&.r-place{
+					color: $p-color-place;
+				}
+			}
+			.p-request-alias{
+				color: $p-color-dark-grey;
+				font-size: 10px !important;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.p-request-owner{
+				font-size:	12px;
+				color: $p-color-dark-grey;
+			}
+			.p-request-buttons{
+				margin-top: 10px;
+			}
+			.p-button{
+				padding: 10px 0;
+				width: 54px;
+			}
+			.p-request-next{
+				position: absolute;
+				font-family: 'EntypoRegular';
+				right: 2px;
+				bottom:18px;
+				font-size:25pt;
+				color:$p-color-dark-grey;
+				&:hover{
+					&.r-place{
+						color: $p-color-place;
+					}
+					&.r-contact{
+						color: $p-color-contact;
+					}
+				}
+			}
+			.p-request-previous{
+				position: absolute;
+				left: 2px;
+				bottom:18px;
+				font-family: 'EntypoRegular';
+				font-size:25pt;
+				color:$p-color-dark-grey;
+				&:hover{
+					&.r-place{
+						color: $p-color-place;
+					}
+					&.r-contact{
+						color: $p-color-contact;
+					}
+				}
+			}
+		}
+	}
+
+.places_overlay{
+	height:30px;
+	z-index:12;
+}
+
+.p-newplace-input{
+	border-radius: 5px;
+	width: 97%;
+	height: 100%;
+	border: 1px solid #b5ac98;
+	font-weight: normal;
+	color: black !important;
+	padding-left: 4px;
+	margin-top: -2px;
+	background: rgba(255,255,255,0.8);
+	&:hover{
+		font-weight:normal;
+		color: black !important;
+	}
+
+}
+
+#add-place{
+	position:absolute;
+	right:4px;
+	top:2px;
+	cursor:pointer;
+	color:white;
+	font-size:1.5em;
+	&:hover{
+		color: $p-color-place !important;
+	}
+}
+
+.p-message-table{
+	border: none;
+	width: 100%;
+	text-align: left;
+	table-layout: fixed;
+	thead tr {
+		background-color: white;
+		border-bottom: solid 1px $p-color-grey;
+		th {
+			&:first-child {padding-left:35px;}
+			&:last-child {padding-right:50px;}
+			&.p-message-contact {width:150px;}
+			&.p-message-since {width:150px;}
+			font-family: "opensans";
+			color: $p-color-dark-grey;
+			font-weight: normal;
+		}
+	}
+	tbody tr {
+		&:nth-of-type(even) {background-color: white;}
+		&:hover{border-bottom: solid 1px $p-color-grey;}
+		td {
+			&:first-child {padding-left:35px;}
+			&.message{font-weight: bold;}
+			&.timeago{font-style: italic;}
+			font-family: "opensans";
+			font-weight: normal;
+			overflow:hidden; 
+			text-overflow: ellipsis;
+		}
+	}
+}

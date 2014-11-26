@@ -1,0 +1,11 @@
+{
+	"name":"notification_manager",
+	"version":"0.0.1",
+	"description":"this plugin manages places notifications",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["server","database_manager","events"],
+		"provides":["notification_manager"]
+	}
+}

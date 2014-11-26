@@ -1,0 +1,93 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.p-add-contact{
+	margin-top:20px;
+	.contacts-result{
+		margin:0;
+	}
+	.p-search-input{
+		border-color:$p-color-dark-grey;
+		&::-webkit-input-placeholder {
+		   color: $p-color-dark-grey;
+		}
+	}
+	.p-buttons{
+		margin:0 auto;
+		text-align:center;
+	}
+}
+.p-import-gmail{
+	background: $p-color-contact url("/images/gmail_import.svg");
+	background-repeat: no-repeat;
+	background-position: 88% 15%;
+	height:160px;
+	width:100%;
+	margin: 0 auto;
+	margin-bottom:30px;
+	background-size: auto 80px;
+}
+.p-contact-import{
+	.p-import-requests{
+		width:50%;
+		margin:0 auto;
+		text-align: center;
+		span.bold{
+			font-weight: bolder;
+		}
+		.p-buttons{
+			width:260px;
+			margin:0 auto;
+			margin-top: 20px;
+			.p-button-round{
+				&:hover{
+					color:white !important;
+					background:$p-color-background-dark !important;
+				}
+			}
+		}
+	}
+
+}
+.p-contact-import-table{
+	@extend .p-file-table;
+	input[type="checkbox"]{
+		background: url("/images/p-checkbox-contact.svg") no-repeat;
+	}
+	tbody tr{
+		height:20px;
+		&.p-file-selected{
+			background: rgba($p-color-contact, 0.15) !important;
+			}
+		&:hover td{
+			background: rgba($p-color-contact, 0.15) !important;
+			border-color:transparent !important;
+		}
+		td{
+			padding:0;
+		}
+	}
+	&:after{
+		content:"";
+		width:100%;
+		position:absolute;
+		display:block;
+		border-bottom: solid 1px $p-color-background-middle;
+	}
+}

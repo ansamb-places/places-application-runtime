@@ -1,0 +1,10 @@
+{
+	"name":"server_link_management",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"plugin":{
+		"consumes":["protocol.builder","server","events","communication_layer"],
+		"provides":["server_link_management"]
+	}
+}

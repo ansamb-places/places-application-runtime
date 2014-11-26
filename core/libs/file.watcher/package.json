@@ -1,0 +1,11 @@
+{
+	"name":"file.watcher",
+	"version":"0.0.1",
+	"description":"this plugin will notify files changes in places",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":["api.place", "api.place.content", "api.account", "events", "database_manager"],
+		"provides":[]
+	}
+}

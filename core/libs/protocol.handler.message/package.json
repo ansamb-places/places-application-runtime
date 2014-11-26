@@ -1,0 +1,11 @@
+{
+	"name":"protocol.handler.message",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the message protocol",
+	"plugin":{
+		"consumes":["protocol.handler","events"],
+		"provides":[]
+	}
+}

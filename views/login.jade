@@ -1,0 +1,42 @@
+// 
+// // Places, Copyright 2014 Ansamb.
+// 
+// This file is part of Places By Ansamb.
+// 
+// Places By Ansamb is free software: you can redistribute it and/or modify it
+// under the terms of the Affero GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// Places By Ansamb is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+// or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+// License for more details.
+// 
+// You should have received a copy of the Affero GNU General Public License
+// along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+extends templates/empty_layout
+block title
+	|Places Login
+block place-content
+
+	div.p-single-content-container.p-form-main
+		div.p-form-title= t('reg.login.log_in')
+
+		form.register(method='post')
+			input(type="email",name='email',placeholder=t('reg.login.email_placeholder'),title=t('reg.login.title'),value=email,required)
+			input(type='password',name='password',placeholder=t('reg.login.password_placeholder'),required)
+			div.row.collapse
+				div.medium-4.columns.medium-offset-4
+					input(class='p-button-round p-background-place p-button-padding',type="submit",value=t('reg.login.button_submit_login'))
+				div.medium-4.columns
+					//a.forget(href="#") I forget my password
+	script(type="text/javascript").
+		window.requireNode = window.require;
+		window.require = undefined;
+
+	script(type="text/javascript",src="/js/application_init/require-config.js")
+	script(type="text/javascript",src="/js/vendor/require.js")
+	script.
+		require(['linkChecker']);

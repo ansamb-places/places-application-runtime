@@ -1,0 +1,15 @@
+{
+	"name":"api.rss",
+	"version":"0.0.1",
+	"description":"this plugin manages rss flow",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"api.place",
+			"api.place.content",
+			"server"
+		],
+		"provides":["api.rss"]
+	}
+}

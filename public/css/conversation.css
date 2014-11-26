@@ -1,0 +1,522 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+/* line 1, ../scss/elements/_global.scss */
+* {
+  -webkit-user-select: none;
+}
+
+/* line 5, ../scss/elements/_global.scss */
+.selectable, #chatBoxes .conversation-div-inner .module .discussion, .selectable *, #chatBoxes .conversation-div-inner .module .discussion * {
+  -webkit-user-select: auto  !important;
+}
+
+/* line 11, ../scss/conversation.scss */
+.ansamber-name + .ansamber-name:before {
+  content: ", ";
+}
+
+/* line 16, ../scss/conversation.scss */
+#chatArea {
+  right: 200px;
+  position: fixed;
+  display: block;
+  float: right;
+  bottom: 0;
+  z-index: 11;
+  height: 30px;
+}
+/* line 24, ../scss/conversation.scss */
+#chatArea .p-stack-div {
+  border-radius: 5px;
+  border: solid 1px #edebeb;
+  background-color: white;
+  height: 100%;
+  width: 30px;
+  display: none;
+  float: left;
+  text-align: center;
+  position: relative;
+  -webkit-box-shadow: #444444 0 0px 5px 0px;
+  -moz-box-shadow: #444444 0 0px 5px 0px;
+  box-shadow: #444444 0 0px 5px 0px;
+}
+/* line 36, ../scss/conversation.scss */
+#chatArea .p-stack-icon {
+  vertical-align: sub;
+  display: inline-block;
+  height: 100%;
+}
+/* line 41, ../scss/conversation.scss */
+#chatArea .stackTag {
+  background-color: #d40013;
+  color: #fff;
+  font-size: 8px;
+  position: absolute;
+  right: 2px;
+  padding: 1px 3px 0px 3px;
+  height: 10px;
+  bottom: 2px;
+}
+
+/* line 52, ../scss/conversation.scss */
+#stackedChatBoxes {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 56, ../scss/conversation.scss */
+#stackedChatBoxes .p-stacked-chat {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 63, ../scss/conversation.scss */
+#chatStack-dropdown {
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+/* line 68, ../scss/conversation.scss */
+.conversation-div {
+  bottom: 0;
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-box-shadow: #b5ac98 0 0px 12px 0px;
+  -moz-box-shadow: #b5ac98 0 0px 12px 0px;
+  box-shadow: #b5ac98 0 0px 12px 0px;
+}
+
+/* line 75, ../scss/conversation.scss */
+#chatBoxes {
+  font-family: "opensans";
+  direction: ltr;
+  zoom: 1;
+  float: left;
+}
+/* line 80, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner {
+  position: relative;
+  float: right;
+  width: auto;
+  margin-left: 10px;
+  height: 30px;
+  display: block;
+  direction: ltr;
+  width: 260px;
+}
+/* line 89, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner.stacked {
+  display: none;
+}
+/* line 92, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .dropOverlay {
+  display: none;
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 101, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .dropOverlay .notif {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 50%;
+  height: 20px;
+  margin: auto;
+  color: white;
+}
+/* line 113, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .info {
+  font-size: 0.8rem;
+}
+/* line 116, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module {
+  font-family: "opensans" !important;
+  width: 260px;
+  @keyframes pulse {
+    /* line 405, ../scss/conversation.scss */
+    from {
+      opacity: 0;
+    }
+
+    /* line 406, ../scss/conversation.scss */
+    to {
+      opacity: 0.5;
+    }
+}
+
+}
+/* line 119, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar.has-new-content {
+  -webkit-animation: blink_content 1s infinite;
+}
+/* line 122, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar {
+  font-family: "opensans" !important;
+  border-left: 0px;
+  border-right: 0px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 30px;
+  line-height: inherit;
+  background: #f5f2e9;
+  padding: 4px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 135, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .p-ci {
+  font-size: 18px;
+  color: black;
+  padding-left: 14px;
+}
+/* line 139, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .p-ci.disable {
+  color: #b7b7b7;
+}
+/* line 141, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .p-ci.disable span:hover {
+  color: #b7b7b7 !important;
+}
+/* line 145, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .p-ci.add-contact, #chatBoxes .conversation-div-inner .module header.top-bar .p-ci.visio-contact, #chatBoxes .conversation-div-inner .module header.top-bar .p-ci.audio-contact {
+  color: #ff7a45;
+}
+/* line 148, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .p-ci.close-chat {
+  color: #856954;
+}
+/* line 153, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .ansambers {
+  width: 109px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-family: "opensans";
+  font-size: 12px;
+  font-weight: normal;
+  color: #ff7a45;
+  margin-left: 5px;
+}
+/* line 166, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .left {
+  float: right;
+  line-height: 25px;
+}
+/* line 171, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar .right {
+  float: right;
+  padding-right: 5px;
+  line-height: 25px;
+}
+/* line 176, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module header.top-bar > * {
+  position: relative;
+}
+/* line 182, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion {
+  list-style: none;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* line 191, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion li {
+  padding: 0.5rem;
+  padding-top: 0px;
+  overflow: hidden;
+  display: block;
+}
+/* line 198, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion .p-downloadable:hover {
+  color: red;
+}
+/* line 202, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion .messages, #chatBoxes .conversation-div-inner .module .discussion .p-chat-sender {
+  word-wrap: break-word;
+}
+/* line 206, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion .avatar {
+  width: 38px;
+  position: relative;
+}
+/* line 210, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .discussion .avatar img {
+  width: 38px;
+  height: 38px;
+  display: block;
+  width: 100%;
+}
+/* line 218, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-chat-time {
+  display: block;
+  color: #b5ac98;
+  font-weight: normal;
+  float: left;
+  font-size: 9pt;
+  font-style: italic;
+  text-transform: lowercase;
+}
+/* line 227, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .file {
+  display: block;
+  font-weight: bold;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+/* line 233, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .status.inprogress {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/list-file-loading.gif);
+  background-size: 100%;
+}
+/* line 240, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .status.done {
+  display: none;
+}
+/* line 272, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .self .messages, #chatBoxes .conversation-div-inner .module .other .messages, #chatBoxes .conversation-div-inner .module .self .p-chat-sender, #chatBoxes .conversation-div-inner .module .other .p-chat-sender {
+  font-family: "Arial";
+  font-size: 12pt !important;
+  order: 1;
+  color: #364557;
+}
+/* line 279, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .self p, #chatBoxes .conversation-div-inner .module .other p {
+  color: #364557;
+}
+/* line 282, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .self .avatar, #chatBoxes .conversation-div-inner .module .other .avatar {
+  flex: 0 0 38px;
+  order: 2;
+}
+/* line 286, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .self:after, #chatBoxes .conversation-div-inner .module .other:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 2px;
+  width: 0;
+  height: 0;
+}
+/* line 297, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .self .time, #chatBoxes .conversation-div-inner .module .other .time {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 311, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-chat-sender {
+  font-weight: normal;
+  color: black !important;
+  font-size: 9pt;
+  display: block;
+}
+/* line 321, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-message {
+  border-radius: 8px;
+  background-color: rgba(255, 122, 69, 0.3);
+  color: black;
+  float: left;
+  padding: 5px;
+  max-width: 100%;
+}
+/* line 330, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-message-1 {
+  background-color: rgba(255, 122, 69, 0.3) !important;
+}
+/* line 334, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-message-2 {
+  background-color: rgba(255, 122, 69, 0.53) !important;
+}
+/* line 338, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-message-3 {
+  background-color: rgba(255, 122, 69, 0.76) !important;
+  color: white;
+}
+/* line 343, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-message-4 {
+  background-color: #ff7a45 !important;
+  color: white;
+}
+/* line 349, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .p-item-owner {
+  background-color: rgba(36, 198, 144, 0.3);
+  float: right;
+  color: black;
+}
+/* line 372, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .conversation {
+  font-size: 12pt;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 377, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .conversation.has-new-content {
+  height: 270px;
+}
+/* line 385, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module #new_post {
+  margin: 0;
+  line-height: 20px !important;
+  resize: none !important;
+  max-height: 140px;
+  border-radius: 0px;
+  border: 0px;
+  background-color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  overflow-y: auto;
+  min-height: 40px;
+}
+/* line 397, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module #new_post[disabled] {
+  background-color: #f2f2f2;
+}
+/* line 401, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .module .reply {
+  border-top: 1px solid #b5ac98;
+}
+/* line 410, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .p-conversation-item {
+  display: block;
+  float: left;
+}
+/* line 415, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .p-item-right {
+  float: right;
+}
+/* line 417, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .p-item-right .p-chat-time {
+  float: right;
+}
+/* line 422, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-box {
+  left: auto;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  background-clip: padding-box;
+  direction: ltr;
+}
+/* line 429, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-box .dropOverlay {
+  display: none;
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 438, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-box .dropOverlay .notif {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 50%;
+  height: 20px;
+  margin: auto;
+  color: white;
+}
+/* line 452, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-div.fullScreen .conversation-box {
+  border: none;
+  min-width: 330px;
+  max-width: none;
+  position: relative;
+  left: auto;
+  right: 0;
+  width: 100%;
+  background-clip: padding-box;
+  direction: ltr;
+}
+/* line 462, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-div.fullScreen .conversation-box .conversation {
+  overflow-y: auto;
+  height: 70vh;
+}
+/* line 466, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-div.fullScreen .conversation-box .dropOverlay {
+  display: none;
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 475, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-div.fullScreen .conversation-box .dropOverlay .notif {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 50%;
+  height: 20px;
+  margin: auto;
+  color: white;
+}
+/* line 487, ../scss/conversation.scss */
+#chatBoxes .conversation-div-inner .conversation-div.fullScreen .conversation-box .new_post {
+  bottom: 0;
+  position: relative;
+  left: 0;
+  padding: auto;
+  margin: 10px;
+  width: 100%;
+}
+
+@-webkit-keyframes blink_content {
+  /* line 500, ../scss/conversation.scss */
+  0% {
+    background: #edebeb;
+  }
+
+  /* line 503, ../scss/conversation.scss */
+  50% {
+    background: #b5ac98;
+  }
+
+  /* line 506, ../scss/conversation.scss */
+  100% {
+    background: #edebeb;
+  }
+}

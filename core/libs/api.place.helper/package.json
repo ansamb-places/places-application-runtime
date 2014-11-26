@@ -1,0 +1,15 @@
+{
+	"name":"api.place.helper",
+	"version":"0.0.1",
+	"description":"this plugin provides special helpers to retrieve places informations",
+	"main":"index",
+	"private":true,
+	"plugin":{
+		"consumes":[
+			"server",
+			"api.place",
+			"api.place.content"
+		],
+		"provides":["api.place.helper"]
+	}
+}

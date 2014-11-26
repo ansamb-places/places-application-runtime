@@ -1,0 +1,107 @@
+/*
+	Places, Copyright 2014 Ansamb.
+	
+	This file is part of Places By Ansamb.
+	
+	Places By Ansamb is free software: you can redistribute it and/or modify it
+	under the terms of the Affero GNU General Public License as published by the
+	Free Software Foundation, either version 3 of the License, or (at your
+	option) any later version.
+	
+	Places By Ansamb is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the Affero GNU General Public
+	License for more details.
+	
+	You should have received a copy of the Affero GNU General Public License
+	along with Places By Ansamb. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+.ng-home{
+	width:100%;
+	.p-ng-header{
+		background:$p-color-place;
+		width:100%;
+		height:195px;
+		margin-bottom: 30px;
+		.p-ng-header-container{
+			padding: 10px 0;
+			position:relative;
+			width: 100%;
+			height:100%;
+			.p-ng-header-text{
+				background: url("/images/NG_Places.svg");
+				background-repeat: no-repeat;
+				background-position: center center;
+				height: 100%;
+				margin: 0 auto;
+				background-size: contain;
+			}
+		}
+	}
+	.p-ng-requests{
+		width:50%;
+		margin:0 auto;
+		text-align: center;
+		.p-ng-contact{
+
+		}
+		.p-ng-place{
+
+		}
+		.p-ng-text{
+			.p-ng-text-place{
+				color:$p-color-place;
+				font-weight:bolder;
+			}
+			.p-ng-text-contact{
+				color:$p-color-contact;
+				font-weight:bolder;
+			}
+		}
+	}
+	.p-ng-buttons{
+		width:260px;
+		margin:0 auto;
+		margin-top: 20px;
+		.p-button-round{
+			&:hover{
+				color:white !important;
+				background:$p-color-background-dark !important;
+			}
+		}
+	}
+	.p-ng-headphones{
+		background: url("/images/headphones.svg");
+		background-repeat: no-repeat;
+		background-position: bottom right ;
+		height:300px;
+		width:100%;
+		margin: 0 auto;
+		background-size: auto 90%;
+	}
+
+	.p-ng-gmail-buttons{
+		width:50%;
+		margin:0 auto;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.p-ng-welcome-banner{
+		text-align:center;
+		vertical-align: middle;
+		background: $p-color-place;
+		color:white;
+		padding-top: 18px;
+		font-size: 32px;
+		height:70px;
+		width: 100%;
+	}
+	.p-ng-welcome-text{
+		padding: 0 25px;
+	}
+	.p-ng-loading{
+		text-align: center;
+		width:100%;
+	}
+}

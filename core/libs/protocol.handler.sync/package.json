@@ -1,0 +1,16 @@
+{
+	"name":"protocol.handler.sync",
+	"version":"0.0.1",
+	"private":true,
+	"main":"index",
+	"description":"this plugin will manage the sync protocol",
+	"plugin":{
+		"consumes":[
+			"protocol.handler",
+			"protocol.builder",
+			"document.network.broker",
+			"api.place.sync"
+		],
+		"provides":[]
+	}
+}
