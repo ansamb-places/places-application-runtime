@@ -87,7 +87,7 @@ module.exports = (options,imports,register)->
 				(callback)->
 					getMainDatabase callback
 				(main_db,callback)->
-					options.raw = true
+					options.raw ?= true
 					options.aliases ?= []
 					main_db.models.global.contact.__places__.addContact(contact_data,options.aliases,options).done callback
 			],(err,contact_obj)->
@@ -102,21 +102,36 @@ module.exports = (options,imports,register)->
 					events.emit 'create',api.createContactDocument(contact_obj)
 				cb(err,contact_obj)
 		addContactRequest:(alias_options,cb)->
+			contact = null
+			networkMsg = null
 			async.waterfall [
 				(callback)->
 					api.searchContactOnServer alias_options,callback
-				(contact,callback)->
-					return callback "Contact not found" if contact == null
-					contact.message = "Do you want to be my friend?" unless "string" == typeof contact.message
-					protocol_builder.contact.addContactRequest({
+				(_contact,callback)->
+					return callback 'Contact not found' if _contact == null
+					contact = _contact
+					contact.status = api.status.requested
+					contact.message = 'Do you want to be my friend?' unless 'string' == typeof contact.message
+					aliases = networkMsgHelper.aliasesDbArrayAdapter(contact.aliases,{first_as_default:true})
+
+					networkMsg = protocol_builder.contact.addContactRequest({
 						uid:contact.uid
 						message:contact.message
-					}).send (err,reply)->
-						return callback("error:#{reply.code}",null) if reply.code!=202
-						contact.status = api.status.requested
-						contact.request_id = reply.ref_id
-						aliases = networkMsgHelper.aliasesDbArrayAdapter(contact.aliases,{first_as_default:true})
-						api.addOrUpdateContact contact,{aliases:aliases},callback
+					})
+					contact.request_id = networkMsg.getMessageId()
+
+					api.addOrUpdateContact contact,{aliases:aliases,raw:false},callback
+				(dbObject,created,callback)->
+					networkMsg.send (err,reply)->
+						if reply.code!=202
+							_cb = callback.bind(null,"error:#{reply.code}",null)
+							if created == true
+								dbObject.destroy().done _cb
+							else
+								dbObject.setAsRemoved().done _cb
+						else
+							callback null,dbObject.toJSON()
+
 			],cb
 		addAliasesToContact:(uid,aliases,options,cb)->
 			if _.isUndefined cb
@@ -226,12 +241,12 @@ module.exports = (options,imports,register)->
 			async.waterfall [
 				(callback)=>
 					return callback("Update can't be null",null) if update==null
-					return callback("update must be an object",null) if not _.isObject(update)
+					return callback('update must be an object',null) if not _.isObject(update)
 					return callback null,options.contact_obj if options?.contact_obj
 					@getContactByUid uid,{raw:false,include_removed:true},(err,contact)->
 						callback err,contact
 				(contact,callback)->
-					return callback("Uid not found",null) if contact==null
+					return callback('Uid not found',null) if contact==null
 					old_status = contact.status
 					status = update.status || contact.status
 					allowed_updates = ['status','firstname','lastname','request_id']
@@ -255,7 +270,7 @@ module.exports = (options,imports,register)->
 						uid:uid
 						ref_id:contact.request_id
 						accepted:true
-						message:"Welcome friend"
+						message:'Welcome friend'
 					}).send()
 				if old_status!=status
 					emit_event = (options)->
@@ -270,7 +285,7 @@ module.exports = (options,imports,register)->
 						scope = '*'
 						notify_user = true
 						#request comes from someone else
-						if old_status==api.status.requested 
+						if old_status==api.status.requested
 							scope = '*'
 							notify_user = true
 						else
@@ -282,9 +297,9 @@ module.exports = (options,imports,register)->
 							lastname:contact.lastname
 							status:status
 						},'contact',scope,notify_user,true
-						opts = 
+						opts =
 							conv_create:options?.conv_create ? true
-						if contact.message == "disable_conv"
+						if contact.message == 'disable_conv'
 							emit_event {conversation_ready:false}
 						else
 							place_lib.createUniquePlaceWithContact uid,{type:'conversation'},opts,(err,p)->
@@ -292,22 +307,24 @@ module.exports = (options,imports,register)->
 								emit_event {conversation_ready:p?}
 					else
 						emit_event()
-				cb(err,contact.values)
+				cb(err,if options.raw == true then contact.toJSON() else contact)
 		# this method will be called by the kernel when an add_request is received from the network
 		# we can't just make a classic add because the request can concern a removed contact which is still into the db
 		addOrUpdateContact:(contact_data,options,cb)->
-
+			created = false
 			async.waterfall [
 				(callback)->
 					api.getContactByUid contact_data.uid,{raw:false,include_removed:true},callback
 				(contact,callback)->
 					if contact == null
+						created = true
 						api.addContact contact_data,options,callback
 					else
 						update = contact_data
 						update.status ?= api.status.pending
 						api.updateContact contact.uid,update,{contact_obj:contact},callback
-			],cb
+			],(err,dbObj)->
+				cb err,dbObj,created
 		searchContactOnServer:(alias,cb)->
 			return cb "Invalid alias object" if not _.isObject(alias)
 			async.waterfall [

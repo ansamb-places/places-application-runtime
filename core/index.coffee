@@ -107,7 +107,8 @@ class coreLoader extends EventEmitter
 				@defer.reject(new Error("Core load failed"))
 				return console.log "Core load failed"
 			time = new Date - start_time
-			console.log "It takes #{time/1000} s to initialize core libs"
+			console.log "It tooks #{time/1000} s to initialize core libs"
+			app.getService('communication_layer').readyToReceive()
 			app.getService("server").set_is_ready(true)
 			@defer.resolve(app)
 			console.log "App ready"

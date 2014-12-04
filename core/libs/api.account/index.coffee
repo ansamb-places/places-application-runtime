@@ -276,6 +276,5 @@ module.exports = (options,imports,register)->
 
 	# ask for the account before publishing the module because we need our own UID
 	api.getAccount (err,reply)->
-		com_layer.readyToReceive()
 		register null,
 			"api.account":api

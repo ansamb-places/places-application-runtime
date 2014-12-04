@@ -278,6 +278,7 @@ module.exports = (options,imports,register)->
 						return callback "No place to remove the ansamber from"
 					async.each places,(ansamber_with_place,_callback)->
 						return callback null if ansamber_with_place.status == "removed"
+						return callback null if ansamber_with_place?.place?.owner_uid?
 						place_id = ansamber_with_place.place.id
 						options = 
 							ansamber_object:ansamber_with_place

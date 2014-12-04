@@ -218,7 +218,7 @@ define [
 					container = $("#new_name_container")
 					if !container.is(e.target) && container.has(e.target).length == 0
 						$(document).off 'click', handler
-						@ui.title.text(old_title)
+						@ui.title.text(old_title) if @ui.title.find('#new_name_container').length > 0
 						@renaming = false
 				force_redraw=($el)->
 					#TODO Search why width is not considered without resetting it after validate rename
@@ -231,17 +231,15 @@ define [
 				new_name.off('keyup').on 'keyup',(e) =>
 					if e.keyCode == 13
 						new_title = new_name.val()
-						@renaming = false
 						@ui.title.text(new_title)
 						if old_title != new_title
 							@place_rename_handler old_title,new_title,@tracked_place_id,->
 								@ui.title.text(old_title)
-						@renaming = false
-						$(document).off 'click', handler
-						force_redraw(@ui.title)
 					if e.keyCode == 27
 						@ui.title.text(old_title)
-						@renaming = false
+					@renaming = false
+					$(document).off 'click', handler
+					force_redraw(@ui.title)
 		trigger_action_button:(e)->
 			target = $(e.currentTarget)
 			@action_button_list[target.attr("title")]() if _.isFunction(@action_button_list[target.attr("title")])

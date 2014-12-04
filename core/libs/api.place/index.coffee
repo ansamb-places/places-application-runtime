@@ -556,10 +556,10 @@ module.exports = (options,imports,register)->
 					else 
 						callback null, place
 				(place, callback) ->
-					black_list = ["id","type"]
+					black_list = ["id","type","status","owner_uid","creation_date"]
 					update_patch = _.omit newAttrs,black_list
 					old_place = _.clone(place.values)
-					place.updateAttributes(update_patch,_.keys(newAttrs)).done (err,data)->
+					place.updateAttributes(update_patch,_.keys(update_patch)).done (err,data)->
 						callback err,place_id,old_place,update_patch, data
 				],(err,place_id,old_place,update_patch, data)->
 					events.emit "update",place_id,update_patch if err==null and notify_ui==true
@@ -580,11 +580,10 @@ module.exports = (options,imports,register)->
 					api.getPlace place_id,{raw:false},(err,place)->
 						callback err,place
 				(place,callback)->
-					to_update = ["name"]
 					black_list = ["id","creation_date","owner_uid","uid"]
 					update_patch = _.omit new_settings,black_list
 					old_place = _.clone(place.values)
-					place.updateAttributes(update_patch,to_update).done (err)->
+					place.updateAttributes(update_patch,_.keys(update_patch)).done (err)->
 						callback err,place_id,old_place,update_patch
 			],(err,place_id,old_place,update_patch)->
 				events.emit "update",place_id,update_patch if err==null and notify_ui==true

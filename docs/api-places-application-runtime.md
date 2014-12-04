@@ -619,7 +619,7 @@ An `ansamber` is the term used to designate a participant within a place.
     "ok":true
 }
 
-## Content Collection [/core/api/places/{place_id}/contents/]
+## Content Collection [/core/api/v1/places/{place_id}/contents/]
 
 
 ### Retrieve all contents of a place [GET]
